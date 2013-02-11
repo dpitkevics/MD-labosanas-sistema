@@ -1,0 +1,433 @@
+2013/02/07 09:23:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\md\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/md/index.php?r=gii
+---
+2013/02/07 09:23:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\md\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/md/index.php?r=gii
+HTTP_REFERER=http://localhost/md/index.php?r=gii
+---
+2013/02/07 09:23:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\md\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/md/index.php?r=gii
+---
+2013/02/07 09:23:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in C:\xampp\htdocs\md\yii\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/md/index.php?r=gii
+HTTP_REFERER=http://localhost/md/index.php?r=gii
+---
+2013/02/07 10:00:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "importHometasks".' in C:\xampp\htdocs\md\yii\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(270): CController->missingAction('importHometasks')
+#1 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#2 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#3 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360227642668
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 09:11:06 [error] [php] opendir(/md/data/,/md/data/): The system cannot find the path specified. (code: 3) (C:\xampp\htdocs\md\protected\controllers\AjaxController.php:19)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360570265978
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (19)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 09:11:30 [error] [php] opendir(/md/data/,/md/data/): The system cannot find the path specified. (code: 3) (C:\xampp\htdocs\md\protected\controllers\AjaxController.php:19)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360570290390
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (19)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 09:31:01 [error] [php] explode() expects at least 2 parameters, 1 given (C:\xampp\htdocs\md\protected\controllers\AjaxController.php:23)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360571461578
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (23)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 09:37:51 [error] [php] include(EZip.php): failed to open stream: No such file or directory (C:\xampp\htdocs\md\yii\YiiBase.php:421)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\YiiBase.php(217): spl_autoload_call()
+#1 C:\xampp\htdocs\md\yii\base\CModule.php(386): createComponent()
+#2 C:\xampp\htdocs\md\yii\base\CModule.php(103): CWebApplication->getComponent()
+#3 C:\xampp\htdocs\md\protected\controllers\AjaxController.php(30): CWebApplication->__get()
+#4 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#5 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#7 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#9 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360571871023
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (30)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 10:14:29 [error] [php] explode() expects parameter 2 to be string, array given (C:\xampp\htdocs\md\protected\controllers\AjaxController.php:36)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360574069774
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (36)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:34:17 [error] [php] explode() expects parameter 2 to be string, array given (C:\xampp\htdocs\md\protected\controllers\AjaxController.php:47)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360589657570
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (47)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:34:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (60)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:34:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\AjaxController.php(60): CActiveRecord->save()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360589677531
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 14:37:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (60)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:37:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\AjaxController.php(60): CActiveRecord->save()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360589847519
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 14:38:54 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (60)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:38:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\AjaxController.php(60): CActiveRecord->save()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360589933714
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 14:39:24 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (60)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:39:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\AjaxController.php(60): CActiveRecord->save()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360589964275
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 14:39:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (60)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:39:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\AjaxController.php(60): CActiveRecord->save()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360589973449
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 14:40:19 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (60)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:40:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\AjaxController.php(60): CActiveRecord->save()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360590019228
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 14:43:14 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (60)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:43:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`received_homeworks`, CONSTRAINT `received_homeworks_ibfk_2` FOREIGN KEY (`studentIDNumber`) REFERENCES `received_homeworks` (`studentIDNumber`)). The SQL statement executed was: INSERT INTO `received_homeworks` (`homestaskID`, `studentIDNumber`, `sourcePath`, `timestamp`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\AjaxController.php(60): CActiveRecord->save()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360590193391
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 14:44:32 [error] [php] Undefined offset: 1 (C:\xampp\htdocs\md\protected\controllers\AjaxController.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#2 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360590254050
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (41)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:47:12 [error] [php] Undefined offset: 1 (C:\xampp\htdocs\md\protected\controllers\AjaxController.php:42)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#2 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360590431897
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (42)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 14:51:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Not a valid hometask' in C:\xampp\htdocs\md\protected\controllers\AjaxController.php:31
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#6 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360590694126
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 15:13:02 [error] [php] Missing argument 2 for CHtml::ajaxLink(), called in C:\xampp\htdocs\md\protected\views\hometask\list.php on line 15 and defined (C:\xampp\htdocs\md\yii\web\helpers\CHtml.php:1021)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CBaseController.php(95): HometaskController->renderInternal()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(869): HometaskController->renderFile()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(782): HometaskController->renderPartial()
+#3 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(16): HometaskController->render()
+#4 unknown(0): HometaskController->actionList()
+#5 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#6 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#9 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#10 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#11 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1
+in C:\xampp\htdocs\md\protected\views\hometask\list.php (15)
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (16)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 15:13:10 [error] [php] Missing argument 2 for CHtml::ajaxLink(), called in C:\xampp\htdocs\md\protected\views\hometask\list.php on line 15 and defined (C:\xampp\htdocs\md\yii\web\helpers\CHtml.php:1021)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CBaseController.php(95): HometaskController->renderInternal()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(869): HometaskController->renderFile()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(782): HometaskController->renderPartial()
+#3 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(16): HometaskController->render()
+#4 unknown(0): HometaskController->actionList()
+#5 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#6 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#9 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#10 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#11 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1
+in C:\xampp\htdocs\md\protected\views\hometask\list.php (15)
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (16)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 15:15:48 [error] [php] include(ReceivedHomeworks.php): failed to open stream: No such file or directory (C:\xampp\htdocs\md\yii\YiiBase.php:421)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(386): spl_autoload_call()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveFinder.php(215): model()
+#2 C:\xampp\htdocs\md\yii\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#3 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(271): CActiveFinder->__construct()
+#4 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(141): Hometask->getRelated()
+#5 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(14): Hometask->__get()
+#6 unknown(0): HometaskController->actionList()
+#7 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#11 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#12 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#13 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (14)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 15:15:49 [error] [php] include(ReceivedHomeworks.php): failed to open stream: No such file or directory (C:\xampp\htdocs\md\yii\YiiBase.php:421)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(386): spl_autoload_call()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveFinder.php(215): model()
+#2 C:\xampp\htdocs\md\yii\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#3 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(271): CActiveFinder->__construct()
+#4 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(141): Hometask->getRelated()
+#5 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(14): Hometask->__get()
+#6 unknown(0): HometaskController->actionList()
+#7 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#11 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#12 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#13 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (14)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 15:23:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Not a valid hometask' in C:\xampp\htdocs\md\protected\controllers\AjaxController.php:31
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#6 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1360592615163
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
+2013/02/11 15:27:56 [error] [php] end() expects parameter 1 to be array, string given (C:\xampp\htdocs\md\protected\views\hometask\show.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CBaseController.php(95): HometaskController->renderInternal()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(869): HometaskController->renderFile()
+#2 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(29): HometaskController->renderPartial()
+#3 unknown(0): HometaskController->actionShow()
+#4 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#8 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#9 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#10 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/show&hid=3&_=1360592876195
+in C:\xampp\htdocs\md\protected\views\hometask\show.php (15)
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (29)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/11 15:33:05 [error] [php] Array to string conversion (C:\xampp\htdocs\md\yii\web\helpers\CHtml.php:2168)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\md\yii\web\CBaseController.php(95): HometaskController->renderInternal()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(869): HometaskController->renderFile()
+#3 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(29): HometaskController->renderPartial()
+#4 unknown(0): HometaskController->actionShow()
+#5 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#6 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#9 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#10 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#11 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/show&hid=3&_=1360593185487
+in C:\xampp\htdocs\md\protected\views\hometask\show.php (19)
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (29)
+in C:\xampp\htdocs\md\index.php (13)
