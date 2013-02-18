@@ -802,3 +802,41 @@ Stack trace:
 REQUEST_URI=/md/index.php?r=hometask
 HTTP_REFERER=http://localhost/md/index.php?r=hometask
 ---
+2013/02/18 14:46:42 [error] [php] Undefined variable: hometaks (C:\xampp\htdocs\md\protected\views\hometask\list.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(869): HometaskController->renderFile()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(782): HometaskController->renderPartial()
+#2 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(37): HometaskController->render()
+#3 unknown(0): HometaskController->actionList()
+#4 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#8 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#9 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#10 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1&hid=90&file=C%3A%5Cxampp%5Chtdocs%5Cmd%5Cprotected%5C..%5Carchive%5C6788%5Ces10146%5Cindex.php
+in C:\xampp\htdocs\md\protected\views\hometask\list.php (14)
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (37)
+in C:\xampp\htdocs\md\index.php (13)
+2013/02/18 14:46:44 [error] [php] Undefined variable: hometaks (C:\xampp\htdocs\md\protected\views\hometask\list.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(869): HometaskController->renderFile()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(782): HometaskController->renderPartial()
+#2 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(37): HometaskController->render()
+#3 unknown(0): HometaskController->actionList()
+#4 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#8 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#9 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#10 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1&hid=90&file=C%3A%5Cxampp%5Chtdocs%5Cmd%5Cprotected%5C..%5Carchive%5C6788%5Ces10146%5Cindex.php
+in C:\xampp\htdocs\md\protected\views\hometask\list.php (14)
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (37)
+in C:\xampp\htdocs\md\index.php (13)

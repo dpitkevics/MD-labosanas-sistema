@@ -11,9 +11,11 @@ $this->breadcrumbs=array(
 <div class="column">
     <?php foreach ($hometasks as $hometask): ?>
     <div class="row">
+        <?php if (isset($_GET['hid']) && $hometask->id==$_GET['hid']) echo '<strong>'; ?>
         <?php echo CHtml::link(
                 $hometask->studentIDNumber, 
                 array('/hometask/list', 'category'=>$_GET['category'], 'hid'=>$hometask->id)); ?>
+        <?php if (isset($_GET['hid']) && $hometask->id==$_GET['hid']) echo '</strong>'; ?>
     </div>
     <?php endforeach; ?>
 </div>
@@ -22,9 +24,11 @@ $this->breadcrumbs=array(
         <?php foreach ($files as $file): ?>
         <?php $name = explode('\\', $file); ?>
         <p>
+            <?php if (isset($_GET['file']) && $file == $_GET['file']) echo '<strong>'; ?>
             <?php echo CHtml::link(
                     end($name), 
-                    array('/hometask/list', 'category'=>$_GET['category'], 'hid'=>$hometask->id, 'file'=>$file)); ?>
+                    array('/hometask/list', 'category'=>$_GET['category'], 'hid'=>$_GET['hid'], 'file'=>$file)); ?>
+            <?php if (isset($_GET['file']) && $file == $_GET['file']) echo '</strong>'; ?>
         </p>
         <?php endforeach; ?>
     <?php endif; ?>
