@@ -7,11 +7,34 @@ class HometaskController extends Controller
 		$this->render('index');
 	}
 
-	public function actionList($category = null)
+	public function actionList($category = null, $hid = null, $file = null)
 	{
+        $files = null;
+        $source = null;
+        $extension = null;
         $hometask = Hometask::model()->findByPk($category);
-                
-		$this->render('list', array('hometasks'=>$hometask->receivedHomeworks));
+        if (!$hometask)
+            throw new CHttpException(404, "No hometask found");
+        if (isset($hid) && $hid !== null) {
+            $homework = ReceivedHomework::model()->findByPk($hid);
+            if (!$homework)
+                throw new CHttpException(404, "No homework found");
+            
+            $files = glob($homework->sourcePath."*");
+        }
+        if (isset($file) && $file !== null) {
+            $source = file_get_contents($file);
+            $extension = explode('\\', $file);
+            $extension = explode('.', end($extension));
+            $extension = end($extension);
+        }
+            
+		$this->render('list', array(
+            'hometasks'=>$hometask->receivedHomeworks, 
+            'files'=>$files, 
+            'source'=>$source,
+            'extension'=>$extension,
+        ));
 	}
 
 	public function actionRun()

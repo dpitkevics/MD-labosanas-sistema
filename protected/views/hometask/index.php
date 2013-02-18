@@ -6,9 +6,7 @@ $this->breadcrumbs=array(
 );
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
-<div class="box">
-    <?php $this->widget('application.extensions.filer.CFiler'); ?>
-</div>
+
 <div class="column">
     <?php echo CHtml::ajaxLink(
             'Run importing', 

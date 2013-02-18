@@ -757,3 +757,48 @@ REQUEST_URI=/md/index.php?r=hometask
 in C:\xampp\htdocs\md\protected\extensions\filer\CFiler.php (37)
 in C:\xampp\htdocs\md\protected\extensions\filer\CFiler.php (35)
 in C:\xampp\htdocs\md\protected\extensions\filer\CFiler.php (23)
+2013/02/18 11:44:16 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.filer.CFiler" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\md\yii\YiiBase.php:316
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\xampp\htdocs\md\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(HometaskController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\md\yii\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\md\protected\views\hometask\index.php(10): CBaseController->widget('application.ext...')
+#4 C:\xampp\htdocs\md\yii\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\md\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\md\yii\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\md\yii\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(7): CController->render('index')
+#9 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): HometaskController->actionIndex()
+#10 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('')
+#14 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask')
+#15 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/md/index.php?r=hometask
+---
+2013/02/18 11:44:17 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.filer.CFiler" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\md\yii\YiiBase.php:316
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\xampp\htdocs\md\yii\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(HometaskController), 'application.ext...', Array)
+#2 C:\xampp\htdocs\md\yii\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\xampp\htdocs\md\protected\views\hometask\index.php(10): CBaseController->widget('application.ext...')
+#4 C:\xampp\htdocs\md\yii\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\md\yii\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\md\yii\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\md\yii\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#8 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(7): CController->render('index')
+#9 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): HometaskController->actionIndex()
+#10 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('')
+#14 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask')
+#15 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/md/index.php?r=hometask
+HTTP_REFERER=http://localhost/md/index.php?r=hometask
+---
