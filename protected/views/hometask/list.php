@@ -34,9 +34,11 @@ $this->breadcrumbs=array(
     <?php endif; ?>
 </div>
 <div class="column span-19" id="hometaskSource">
+    <?php if ($files !== null): ?>
     <div class="box">
-        <?php echo CHtml::link('See this homework live', '#', array('target'=>'_blank')); ?>
+        <?php echo CHtml::link('See this homework live', array('/hometask/run', 'hid'=>$_GET['hid']), array('target'=>'_blank')); ?>
     </div>
+    <?php endif; ?>
     <?php if ($source !== null): ?>
         <?php $this->beginWidget('CTextHighlighter', array(
             'language'=>($extension === null)?'PHP':$extension,

@@ -37,9 +37,13 @@ class HometaskController extends Controller
         ));
 	}
 
-	public function actionRun()
+	public function actionRun($hid = null)
 	{
-		$this->render('run');
+        $homework = ReceivedHomework::model()->findByPk($hid);
+        if (!$homework)
+            throw new CHttpException(404, "No homework found");
+        
+		$this->render('run', array('hw'=>$homework));
 	}
 
 	public function actionShow($hid = null)

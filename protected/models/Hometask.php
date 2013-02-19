@@ -8,6 +8,7 @@
  * @property integer $zipID
  * @property string $title
  * @property integer $isImported
+ * @property string $indexFile
  * @property integer $term
  * @property integer $timestamp
  *
@@ -42,12 +43,12 @@ class Hometask extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('zipID, title, term, timestamp', 'required'),
+			array('zipID, title, indexFile, term, timestamp', 'required'),
 			array('zipID, isImported, term, timestamp', 'numerical', 'integerOnly'=>true),
-			array('title', 'length', 'max'=>128),
+			array('title, indexFile', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, zipID, title, isImported, term, timestamp', 'safe', 'on'=>'search'),
+			array('id, zipID, title, isImported, indexFile, term, timestamp', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,6 +74,7 @@ class Hometask extends CActiveRecord
 			'zipID' => 'Zip',
 			'title' => 'Title',
 			'isImported' => 'Is Imported',
+			'indexFile' => 'Index File',
 			'term' => 'Term',
 			'timestamp' => 'Timestamp',
 		);
@@ -93,6 +95,7 @@ class Hometask extends CActiveRecord
 		$criteria->compare('zipID',$this->zipID);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('isImported',$this->isImported);
+		$criteria->compare('indexFile',$this->indexFile,true);
 		$criteria->compare('term',$this->term);
 		$criteria->compare('timestamp',$this->timestamp);
 
