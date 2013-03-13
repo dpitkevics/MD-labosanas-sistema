@@ -12,6 +12,12 @@ $this->breadcrumbs=array(
     <div class="row">
         <h3>Tests</h3>
     </div>
+    <div class="row">
+        Nopelnīti <?php echo $sums['user']; ?> punkti no <?php echo $sums['weight']; ?>.
+    </div>
+    <div class="row">
+        Piedāvātā atzīme: <?php echo round(($sums['user'] / ($sums['weight'] / 100)) / 10); ?>
+    </div>
     <?php foreach ($hw->hometask->hometaskCriterias as $criteria): ?>
     <div class="row">
         <strong><?php echo $criteria->criteria->public_name; ?>:</strong>

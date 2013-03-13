@@ -44,12 +44,21 @@ class HometaskController extends Controller
             throw new CHttpException(404, "No homework found");
         
         $criterias = $homework->hometask->hometaskCriterias;
+        
+        $sums = array(
+            'weight' => 0,
+            'user' => 0,
+        );
         foreach ($criterias as $criteria) {
+            $sums['weight'] += $criteria->criteria->weight;
+            
             $crit = new CCriteria($criteria->criteria, $homework->sourcePath);
             $validation[$criteria->criteria->id] = $crit->run();
+            
+            $sums['user'] += ($validation[$criteria->criteria->id]?$criteria->criteria->weight:0);
         }
         
-		$this->render('run', array('hw'=>$homework, 'validation'=>$validation));
+		$this->render('run', array('hw'=>$homework, 'validation'=>$validation, 'sums' => $sums));
 	}
 
 	public function actionShow($hid = null)
