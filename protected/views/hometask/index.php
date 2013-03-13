@@ -8,6 +8,9 @@ $this->breadcrumbs=array(
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 
 <div class="column">
+    <?php echo CHtml::link('Create a new hometask', array('/hometask/create')); ?>
+</div>
+<div class="column">
     <?php echo CHtml::ajaxLink(
             'Run importing', 
             array('/ajax/importHometasks'), 

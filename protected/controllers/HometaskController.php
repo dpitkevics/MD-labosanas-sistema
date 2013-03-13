@@ -43,7 +43,13 @@ class HometaskController extends Controller
         if (!$homework)
             throw new CHttpException(404, "No homework found");
         
-		$this->render('run', array('hw'=>$homework));
+        $criterias = $homework->hometask->hometaskCriterias;
+        foreach ($criterias as $criteria) {
+            $crit = new CCriteria($criteria->criteria, $homework->sourcePath);
+            $validation[$criteria->criteria->id] = $crit->run();
+        }
+        
+		$this->render('run', array('hw'=>$homework, 'validation'=>$validation));
 	}
 
 	public function actionShow($hid = null)
@@ -55,6 +61,33 @@ class HometaskController extends Controller
         $files = glob($hometask->sourcePath."*");
 		$this->renderPartial('show', array('files'=>$files));
 	}
+    
+    public function actionCreate()
+    {
+        $model=new Hometask('create');
+
+        // uncomment the following code to enable ajax-based validation
+        /*
+        if(isset($_POST['ajax']) && $_POST['ajax']==='hometask-create-form')
+        {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+        */
+
+        if(isset($_POST['Hometask']))
+        {
+            $model->attributes=$_POST['Hometask'];
+            $model->isImported = 0;
+            $model->timestamp = time();
+            $model->term = strtotime($model->term);
+            if($model->save())
+            {
+                $this->refresh();
+            }
+        }
+        $this->render('create',array('model'=>$model));
+    }
 
 	// Uncomment the following methods and override them if needed
 	/*

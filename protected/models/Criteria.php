@@ -1,27 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "hometasks".
+ * This is the model class for table "criterias".
  *
- * The followings are the available columns in table 'hometasks':
+ * The followings are the available columns in table 'criterias':
  * @property integer $id
- * @property integer $zipID
- * @property string $title
- * @property integer $isImported
- * @property string $indexFile
- * @property integer $term
+ * @property string $public_name
+ * @property double $weight
+ * @property integer $type
+ * @property string $criteria_sentence
  * @property integer $timestamp
  *
  * The followings are the available model relations:
  * @property HometaskCriterias[] $hometaskCriteriases
- * @property ReceivedHomeworks[] $receivedHomeworks
  */
-class Hometask extends CActiveRecord
+class Criteria extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Hometask the static model class
+	 * @return Criteria the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -33,7 +31,7 @@ class Hometask extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'hometasks';
+		return 'criterias';
 	}
 
 	/**
@@ -44,12 +42,13 @@ class Hometask extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('zipID, title, indexFile, term, timestamp', 'required'),
-			array('zipID, isImported, term, timestamp', 'numerical', 'integerOnly'=>true),
-			array('title, indexFile', 'length', 'max'=>128),
+			array('public_name, weight, type, criteria_sentence, timestamp', 'required'),
+			array('type, timestamp', 'numerical', 'integerOnly'=>true),
+			array('weight', 'numerical'),
+			array('public_name', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, zipID, title, isImported, indexFile, term, timestamp', 'safe', 'on'=>'search'),
+			array('id, public_name, weight, type, criteria_sentence, timestamp', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,8 +60,7 @@ class Hometask extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'hometaskCriterias' => array(self::HAS_MANY, 'HometaskCriteria', 'hometask_id'),
-			'receivedHomeworks' => array(self::HAS_MANY, 'ReceivedHomework', 'homestaskID'),
+			'hometaskCriteriases' => array(self::HAS_MANY, 'HometaskCriteria', 'criteria_id'),
 		);
 	}
 
@@ -73,11 +71,10 @@ class Hometask extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'zipID' => 'Zip',
-			'title' => 'Title',
-			'isImported' => 'Is Imported',
-			'indexFile' => 'Index File',
-			'term' => 'Term',
+			'public_name' => 'Public Name',
+			'weight' => 'Weight',
+			'type' => 'Type',
+			'criteria_sentence' => 'Criteria Sentence',
 			'timestamp' => 'Timestamp',
 		);
 	}
@@ -94,11 +91,10 @@ class Hometask extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('zipID',$this->zipID);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('isImported',$this->isImported);
-		$criteria->compare('indexFile',$this->indexFile,true);
-		$criteria->compare('term',$this->term);
+		$criteria->compare('public_name',$this->public_name,true);
+		$criteria->compare('weight',$this->weight);
+		$criteria->compare('type',$this->type);
+		$criteria->compare('criteria_sentence',$this->criteria_sentence,true);
 		$criteria->compare('timestamp',$this->timestamp);
 
 		return new CActiveDataProvider($this, array(

@@ -12,12 +12,13 @@ $this->breadcrumbs=array(
     <div class="row">
         <h3>Tests</h3>
     </div>
+    <?php foreach ($hw->hometask->hometaskCriterias as $criteria): ?>
     <div class="row">
-        <strong>W3 Valid:</strong><span style="color:green;">OK</span>
-    </div>
-    <div class="row">
-        <strong>No error output:</strong><span style="color:red;">Not OK</span>
-    </div>
+        <strong><?php echo $criteria->criteria->public_name; ?>:</strong>
+        <span style="color:<?php echo (($validation[$criteria->criteria->id])?"green":"red"); ?>;">
+            <?php echo (($validation[$criteria->criteria->id])?"OK":"Not OK"); ?>
+        </span>
+    <?php endforeach; ?>
 </div>
 <div class="container">
     <iframe src="<?php echo $url; ?>" frameborder="0" marginheight="0" marginwidth="0" width="95%" height="600px" scrolling="auto"></iframe>
