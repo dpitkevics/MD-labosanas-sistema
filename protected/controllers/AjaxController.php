@@ -2,22 +2,26 @@
 
 class AjaxController extends Controller
 {
-	public function actionHomeworkTypes()
-	{
+    public function actionHomeworkTypes()
+    {
         if (Yii::app()->request->isAjaxRequest) {
             $hometasks = Hometask::model()->findAll();
-            $this->renderPartial('homeworkTypes', array('hometasks'=>$hometasks));
+            foreach ($hometasks as $hometask) {
+                if ($hometask->userHometasks->user_id === Yii::app()->user->id)
+                    $rHometasks[] = $hometask;
+            }
+            $this->renderPartial('homeworkTypes', array('hometasks'=>$rHometasks));
         } else {
             throw new CHttpException(404, "You are not allowed here");
         }
-	}
+    }
     
     public function actionImportHometasks()
     {
         if (Yii::app()->request->isAjaxRequest) {
-            $baseDir = Yii::app()->basePath . '\\..';
-            $dataDir = $baseDir . '\\data\\';
-            $archiveDir = $baseDir . '\\archive\\';
+            $baseDir = Yii::app()->basePath . '\\';
+            $dataDir = $baseDir . '\\data\\data-'.$this->getDirAppendix().'\\';
+            $archiveDir = $baseDir . '\\archive\\archive-'.$this->getDirAppendix().'\\';
             $files = glob($dataDir.'*.zip');
             foreach ($files as $file) {
                 $name = explode ('\\', $file);
@@ -27,6 +31,8 @@ class AjaxController extends Controller
                 $zipID = $zipID[0];
                 
                 $hometask = Hometask::model()->findByAttributes(array('zipID'=>$zipID));
+                if ($hometask->userHometasks->user_id !== Yii::app()->user->id)
+                    continue;
                 if (!$hometask || $hometask->isImported)
                     throw new CHttpException (404, "Not a valid hometask");
                 

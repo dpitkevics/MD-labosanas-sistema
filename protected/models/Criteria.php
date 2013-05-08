@@ -60,7 +60,7 @@ class Criteria extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'hometaskCriteriases' => array(self::HAS_MANY, 'HometaskCriteria', 'criteria_id'),
+			'hometaskCriterias' => array(self::HAS_MANY, 'HometaskCriteria', 'criteria_id'),
 		);
 	}
 

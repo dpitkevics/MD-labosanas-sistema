@@ -4215,3 +4215,450 @@ REQUEST_URI=/md/index.php?r=hometask/run&hid=22
 in C:\xampp\htdocs\md\protected\components\CCriteria.php(205) : eval()'d code (57)
 in C:\xampp\htdocs\md\protected\components\CCriteria.php(205) : eval()'d code (75)
 in C:\xampp\htdocs\md\protected\components\CCriteria.php(205) : eval()'d code (84)
+2013/05/05 12:56:05 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\md\protected\components\UserIdentity.php:23)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\xampp\htdocs\md\yii\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\xampp\htdocs\md\protected\controllers\SiteController.php(94): LoginForm->validate()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=site/login
+in C:\xampp\htdocs\md\protected\components\UserIdentity.php (23)
+in C:\xampp\htdocs\md\protected\models\LoginForm.php (52)
+in C:\xampp\htdocs\md\protected\controllers\SiteController.php (94)
+2013/05/05 13:00:27 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\md\protected\components\UserIdentity.php:23)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\xampp\htdocs\md\yii\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\xampp\htdocs\md\protected\controllers\SiteController.php(94): LoginForm->validate()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=site/login
+in C:\xampp\htdocs\md\protected\components\UserIdentity.php (23)
+in C:\xampp\htdocs\md\protected\models\LoginForm.php (52)
+in C:\xampp\htdocs\md\protected\controllers\SiteController.php (94)
+2013/05/05 13:02:24 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\md\protected\components\UserIdentity.php:21)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 C:\xampp\htdocs\md\yii\base\CModel.php(159): CInlineValidator->validate()
+#2 C:\xampp\htdocs\md\protected\controllers\SiteController.php(94): LoginForm->validate()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): SiteController->runAction()
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=site/login
+in C:\xampp\htdocs\md\protected\components\UserIdentity.php (21)
+in C:\xampp\htdocs\md\protected\models\LoginForm.php (52)
+in C:\xampp\htdocs\md\protected\controllers\SiteController.php (94)
+2013/05/05 14:04:33 [error] [php] include(ReceivedHomeworks.php): failed to open stream: No such file or directory (C:\xampp\htdocs\md\yii\YiiBase.php:421)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(386): spl_autoload_call()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveFinder.php(215): model()
+#2 C:\xampp\htdocs\md\yii\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#3 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(271): CActiveFinder->__construct()
+#4 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(141): Hometask->getRelated()
+#5 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(33): Hometask->__get()
+#6 unknown(0): HometaskController->actionList()
+#7 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#11 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#12 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#13 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (33)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/05 14:04:35 [error] [php] include(ReceivedHomeworks.php): failed to open stream: No such file or directory (C:\xampp\htdocs\md\yii\YiiBase.php:421)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(386): spl_autoload_call()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveFinder.php(215): model()
+#2 C:\xampp\htdocs\md\yii\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree()
+#3 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(271): CActiveFinder->__construct()
+#4 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(141): Hometask->getRelated()
+#5 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(33): Hometask->__get()
+#6 unknown(0): HometaskController->actionList()
+#7 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#8 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#11 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#12 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#13 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (33)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/05 14:05:41 [error] [exception.CException] exception 'CException' with message 'Property "Hometask.hometaskCriterias" is not defined.' in C:\xampp\htdocs\md\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(143): CComponent->__get('hometaskCriteri...')
+#1 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(46): CActiveRecord->__get('hometaskCriteri...')
+#2 [internal function]: HometaskController->actionRun('22')
+#3 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(HometaskController), Array)
+#4 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(HometaskController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('run')
+#9 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask/run')
+#10 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/md/index.php?r=hometask/run&hid=22
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/list&category=1&hid=22&file=C%3A%5Cxampp%5Chtdocs%5Cmd%5Cprotected%5C..%5Carchive%5C6788%5Cdp11058%5Cindex.php
+---
+2013/05/05 14:05:43 [error] [exception.CException] exception 'CException' with message 'Property "Hometask.hometaskCriterias" is not defined.' in C:\xampp\htdocs\md\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(143): CComponent->__get('hometaskCriteri...')
+#1 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(46): CActiveRecord->__get('hometaskCriteri...')
+#2 [internal function]: HometaskController->actionRun('22')
+#3 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(HometaskController), Array)
+#4 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(HometaskController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('run')
+#9 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask/run')
+#10 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/md/index.php?r=hometask/run&hid=22
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/list&category=1&hid=22&file=C%3A%5Cxampp%5Chtdocs%5Cmd%5Cprotected%5C..%5Carchive%5C6788%5Cdp11058%5Cindex.php
+---
+2013/05/05 14:05:45 [error] [exception.CException] exception 'CException' with message 'Property "Hometask.hometaskCriterias" is not defined.' in C:\xampp\htdocs\md\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(143): CComponent->__get('hometaskCriteri...')
+#1 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(46): CActiveRecord->__get('hometaskCriteri...')
+#2 [internal function]: HometaskController->actionRun('22')
+#3 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(HometaskController), Array)
+#4 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(HometaskController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('run')
+#9 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask/run')
+#10 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/md/index.php?r=hometask/run&hid=22
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/run&hid=22
+---
+2013/05/05 14:06:27 [error] [php] file_get_contents(C:\xampp\htdocs\md\protected\..\archive\6788\dp11058\index.phpa): failed to open stream: No such file or directory (C:\xampp\htdocs\md\protected\controllers\HometaskController.php:26)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#6 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1&hid=22&file=C%3A%5Cxampp%5Chtdocs%5Cmd%5Cprotected%5C..%5Carchive%5C6788%5Cdp11058%5Cindex.phpa
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (26)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/05 14:06:29 [error] [php] file_get_contents(C:\xampp\htdocs\md\protected\..\archive\6788\dp11058\index.phpa): failed to open stream: No such file or directory (C:\xampp\htdocs\md\protected\controllers\HometaskController.php:26)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#1 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#6 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/list&category=1&hid=22&file=C%3A%5Cxampp%5Chtdocs%5Cmd%5Cprotected%5C..%5Carchive%5C6788%5Cdp11058%5Cindex.phpa
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (26)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/05 14:13:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`user_hometasks`, CONSTRAINT `user_hometasks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `user_hometasks` (`user_id`, `timestamp`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (99)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/05 14:13:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`user_hometasks`, CONSTRAINT `user_hometasks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `user_hometasks` (`user_id`, `timestamp`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(99): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): HometaskController->actionCreate()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask/create')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=hometask/create
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/create
+---
+2013/05/05 14:13:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`user_hometasks`, CONSTRAINT `user_hometasks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `user_hometasks` (`user_id`, `hometask_id`, `timestamp`) VALUES (:yp0, :yp1, :yp2).
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (99)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/05 14:13:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`user_hometasks`, CONSTRAINT `user_hometasks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `user_hometasks` (`user_id`, `hometask_id`, `timestamp`) VALUES (:yp0, :yp1, :yp2)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(99): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): HometaskController->actionCreate()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask/create')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=hometask/create
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/create
+---
+2013/05/05 14:14:50 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`user_hometasks`, CONSTRAINT `user_hometasks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `user_hometasks` (`user_id`, `hometask_id`, `timestamp`) VALUES (:yp0, :yp1, :yp2).
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (100)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/05 14:14:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`md`.`user_hometasks`, CONSTRAINT `user_hometasks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)). The SQL statement executed was: INSERT INTO `user_hometasks` (`user_id`, `hometask_id`, `timestamp`) VALUES (:yp0, :yp1, :yp2)' in C:\xampp\htdocs\md\yii\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(100): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): HometaskController->actionCreate()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('create')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask/create')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=hometask/create
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/create
+---
+2013/05/05 15:26:40 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\md\protected\controllers\AjaxController.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#2 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/homeworkTypes&_=1367760398661
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (10)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/05 15:26:43 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\md\protected\controllers\AjaxController.php:10)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(286): AjaxController->runAction()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(265): AjaxController->runActionWithFilters()
+#2 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): AjaxController->run()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=ajax/homeworkTypes&_=1367760402403
+in C:\xampp\htdocs\md\protected\controllers\AjaxController.php (10)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/08 19:39:59 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.username" is not defined.' in C:\xampp\htdocs\md\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\auth\CWebUser.php(140): CComponent->__get('username')
+#1 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(7): CWebUser->__get('username')
+#2 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): HometaskController->actionIndex()
+#3 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask')
+#8 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/md/index.php?r=hometask
+---
+2013/05/08 19:40:01 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.username" is not defined.' in C:\xampp\htdocs\md\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\auth\CWebUser.php(140): CComponent->__get('username')
+#1 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(7): CWebUser->__get('username')
+#2 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): HometaskController->actionIndex()
+#3 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('')
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask')
+#8 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/md/index.php?r=hometask
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask
+---
+2013/05/08 19:47:12 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.email" is not defined.' in C:\xampp\htdocs\md\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\auth\CWebUser.php(140): CComponent->__get('email')
+#1 C:\xampp\htdocs\md\protected\components\Controller.php(26): CWebUser->__get('email')
+#2 C:\xampp\htdocs\md\protected\controllers\SiteController.php(94): Controller->getDirAppendix()
+#3 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): SiteController->actionRegistration()
+#4 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('registration')
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('site/registrati...')
+#9 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/md/index.php?r=site/registration
+HTTP_REFERER=http://localhost:8081/md/index.php?r=site/registration
+---
+2013/05/08 19:51:29 [error] [php] mkdir(): No such file or directory (C:\xampp\htdocs\md\protected\controllers\SiteController.php:96)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(286): SiteController->runAction()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): SiteController->run()
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=site/registration
+in C:\xampp\htdocs\md\protected\controllers\SiteController.php (96)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/08 19:53:31 [error] [php] chdir(): No such file or directory (errno 2) (C:\xampp\htdocs\md\protected\controllers\SiteController.php:96)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(286): SiteController->runAction()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): SiteController->run()
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=site/registration
+in C:\xampp\htdocs\md\protected\controllers\SiteController.php (96)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/08 20:27:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'This is not a valid zip file' in C:\xampp\htdocs\md\protected\controllers\HometaskController.php:112
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): HometaskController->actionUpload()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('upload')
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask/upload')
+#6 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/md/index.php?r=hometask/upload
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/upload
+---
+2013/05/08 20:39:10 [error] [exception.CException] exception 'CException' with message 'Property "Hometask.hometaskCriterias" is not defined.' in C:\xampp\htdocs\md\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(143): CComponent->__get('hometaskCriteri...')
+#1 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(46): CActiveRecord->__get('hometaskCriteri...')
+#2 [internal function]: HometaskController->actionRun('23')
+#3 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(HometaskController), Array)
+#4 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(HometaskController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('run')
+#9 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask/run')
+#10 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/md/index.php?r=hometask/run&hid=23
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/list&category=11&hid=23&file=C%3A%5Cxampp%5Chtdocs%5Cmd%5Cprotected%5C%5Carchive%5C6788%5Cdp11058%5Cgraph.php
+---
+2013/05/08 20:39:13 [error] [exception.CException] exception 'CException' with message 'Property "Hometask.hometaskCriterias" is not defined.' in C:\xampp\htdocs\md\yii\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\db\ar\CActiveRecord.php(143): CComponent->__get('hometaskCriteri...')
+#1 C:\xampp\htdocs\md\protected\controllers\HometaskController.php(46): CActiveRecord->__get('hometaskCriteri...')
+#2 [internal function]: HometaskController->actionRun('23')
+#3 C:\xampp\htdocs\md\yii\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(HometaskController), Array)
+#4 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(HometaskController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('run')
+#9 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('hometask/run')
+#10 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/md/index.php?r=hometask/run&hid=23
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/run&hid=23
+---
+2013/05/08 21:01:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Not a valid hometask' in C:\xampp\htdocs\md\protected\controllers\AjaxController.php:37
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#6 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1368039684994
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/index
+---
+2013/05/08 21:02:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Not a valid hometask' in C:\xampp\htdocs\md\protected\controllers\AjaxController.php:37
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#6 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1368039747700
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/index
+---
+2013/05/08 21:02:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Not a valid hometask' in C:\xampp\htdocs\md\protected\controllers\AjaxController.php:37
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(49): AjaxController->actionImportHometasks()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\md\yii\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\md\yii\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): CController->run('importHometasks')
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController('ajax/importHome...')
+#6 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\md\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/md/index.php?r=ajax/importHometasks&_=1368039758341
+HTTP_REFERER=http://localhost:8081/md/index.php?r=hometask/index
+---
+2013/05/08 21:04:35 [error] [php] Undefined variable: validation (C:\xampp\htdocs\md\protected\controllers\HometaskController.php:61)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#3 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/run&hid=23
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (61)
+in C:\xampp\htdocs\md\index.php (13)
+2013/05/08 21:04:37 [error] [php] Undefined variable: validation (C:\xampp\htdocs\md\protected\controllers\HometaskController.php:61)
+Stack trace:
+#0 C:\xampp\htdocs\md\yii\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\md\yii\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\md\yii\web\CController.php(286): HometaskController->runAction()
+#3 C:\xampp\htdocs\md\yii\web\CController.php(265): HometaskController->runActionWithFilters()
+#4 C:\xampp\htdocs\md\yii\web\CWebApplication.php(282): HometaskController->run()
+#5 C:\xampp\htdocs\md\yii\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\md\yii\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\md\index.php(13): CWebApplication->run()
+REQUEST_URI=/md/index.php?r=hometask/run&hid=23
+in C:\xampp\htdocs\md\protected\controllers\HometaskController.php (61)
+in C:\xampp\htdocs\md\index.php (13)

@@ -4,7 +4,7 @@ class HometaskController extends Controller
 {
 	public function actionIndex()
 	{
-		$this->render('index');
+            $this->render('index');
 	}
 
 	public function actionList($category = null, $hid = null, $file = null)
@@ -71,32 +71,52 @@ class HometaskController extends Controller
 		$this->renderPartial('show', array('files'=>$files));
 	}
     
-    public function actionCreate()
-    {
-        $model=new Hometask('create');
-
-        // uncomment the following code to enable ajax-based validation
-        /*
-        if(isset($_POST['ajax']) && $_POST['ajax']==='hometask-create-form')
+        public function actionCreate()
         {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
-        }
-        */
+            $model=new Hometask('create');
 
-        if(isset($_POST['Hometask']))
-        {
-            $model->attributes=$_POST['Hometask'];
-            $model->isImported = 0;
-            $model->timestamp = time();
-            $model->term = strtotime($model->term);
-            if($model->save())
+            // uncomment the following code to enable ajax-based validation
+            /*
+            if(isset($_POST['ajax']) && $_POST['ajax']==='hometask-create-form')
             {
-                $this->refresh();
+                echo CActiveForm::validate($model);
+                Yii::app()->end();
             }
+            */
+
+            if(isset($_POST['Hometask']))
+            {
+                $model->attributes=$_POST['Hometask'];
+                $model->isImported = 0;
+                $model->timestamp = time();
+                $model->term = strtotime($model->term);
+                if($model->save())
+                {
+                    $user_hometask = new UserHometask();
+                    $user_hometask->user_id = Yii::app()->user->id;
+                    $user_hometask->hometask_id = $model->primaryKey;
+                    $user_hometask->timestamp = time();
+                    $user_hometask->save(false);
+                    $this->refresh();
+                }
+            }
+            $this->render('create',array('model'=>$model));
         }
-        $this->render('create',array('model'=>$model));
-    }
+        
+        public function actionUpload()
+        {
+            if (isset($_FILES['Hometask']))
+            {
+                $file = CUploadedFile::getInstanceByName('Hometask[upload]');
+                if (strpos($file->type, 'zip')===false && strpos($file->name, '.zip')===false)
+                    throw new CHttpException(404, "This is not a valid zip file");
+                $baseDir = Yii::app()->basePath;
+                $dataDir = $baseDir . '\\data\\data-'.$this->getDirAppendix().'\\';
+                if ($file->saveAs($dataDir . $file->name))
+                    $this->redirect (array('/hometask/index'));
+            }
+            $this->render('upload');
+        }
 
 	// Uncomment the following methods and override them if needed
 	/*

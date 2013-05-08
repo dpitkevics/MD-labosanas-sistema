@@ -72,6 +72,37 @@ class SiteController extends Controller
 		$this->render('contact',array('model'=>$model));
 	}
 
+        public function actionRegistration()
+        {
+            $model=new User('register');
+
+            if(isset($_POST['ajax']) && $_POST['ajax']==='user-registration-form')
+            {
+                echo CActiveForm::validate($model);
+                Yii::app()->end();
+            }
+            
+            if(isset($_POST['User']))
+            {
+                $model->attributes=$_POST['User'];
+                $model->timestamp = time();
+                if($model->validate())
+                {
+                    $model->password = sha1($model->password);
+                    if ($model->save(false)) {
+                        $baseDir = Yii::app()->basePath;
+                        $dataDir = $baseDir . '\\data\\data-'.str_replace('@', '', str_replace('.', '', $model->email)).'\\';
+                        if (!is_dir($dataDir))
+                            mkdir ($dataDir);
+                        $this->redirect (array('/site/index'));
+                    }
+                    // form inputs are valid, do something here
+                    return;
+                }
+            }
+            $this->render('registration',array('model'=>$model));
+        }
+        
 	/**
 	 * Displays the login page
 	 */

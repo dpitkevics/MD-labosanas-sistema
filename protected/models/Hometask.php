@@ -13,8 +13,8 @@
  * @property integer $timestamp
  *
  * The followings are the available model relations:
- * @property HometaskCriterias[] $hometaskCriteriases
  * @property ReceivedHomeworks[] $receivedHomeworks
+ * @property UserHometasks[] $userHometasks
  */
 class Hometask extends CActiveRecord
 {
@@ -61,8 +61,9 @@ class Hometask extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'hometaskCriterias' => array(self::HAS_MANY, 'HometaskCriteria', 'hometask_id'),
 			'receivedHomeworks' => array(self::HAS_MANY, 'ReceivedHomework', 'homestaskID'),
+			'userHometasks' => array(self::HAS_ONE, 'UserHometask', 'hometask_id'),
+                        'hometaskCriterias' => array(self::HAS_MANY, 'HometaskCriteria', 'hometask_id'),
 		);
 	}
 
