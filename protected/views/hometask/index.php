@@ -11,6 +11,9 @@ $this->breadcrumbs=array(
     <?php echo CHtml::link('Create a new hometask', array('/hometask/create')); ?>
 </div>
 <div class="column">
+    <?php echo CHtml::link('Upload ZIP', array('/hometask/upload')); ?>
+</div>
+<div class="column">
     <?php echo CHtml::ajaxLink(
             'Run importing', 
             array('/ajax/importHometasks'), 
