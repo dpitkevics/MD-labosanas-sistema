@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'criterias':
  * @property integer $id
+ * @property integer $user_id
  * @property string $public_name
  * @property double $weight
  * @property integer $type
@@ -12,6 +13,7 @@
  * @property integer $timestamp
  *
  * The followings are the available model relations:
+ * @property User $user
  * @property HometaskCriterias[] $hometaskCriteriases
  */
 class Criteria extends CActiveRecord
@@ -42,13 +44,13 @@ class Criteria extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('public_name, weight, type, criteria_sentence, timestamp', 'required'),
-			array('type, timestamp', 'numerical', 'integerOnly'=>true),
+			array('user_id, public_name, weight, type, criteria_sentence, timestamp', 'required'),
+			array('user_id, type, timestamp', 'numerical', 'integerOnly'=>true),
 			array('weight', 'numerical'),
 			array('public_name', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, public_name, weight, type, criteria_sentence, timestamp', 'safe', 'on'=>'search'),
+			array('id, user_id, public_name, weight, type, criteria_sentence, timestamp', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +62,7 @@ class Criteria extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                        'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 			'hometaskCriterias' => array(self::HAS_MANY, 'HometaskCriteria', 'criteria_id'),
 		);
 	}
@@ -71,6 +74,7 @@ class Criteria extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+                        'user_id' => 'User',
 			'public_name' => 'Public Name',
 			'weight' => 'Weight',
 			'type' => 'Type',
@@ -91,6 +95,7 @@ class Criteria extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+                $criteria->compare('user_id',$this->user_id);
 		$criteria->compare('public_name',$this->public_name,true);
 		$criteria->compare('weight',$this->weight);
 		$criteria->compare('type',$this->type);

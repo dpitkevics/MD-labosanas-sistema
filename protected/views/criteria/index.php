@@ -7,7 +7,14 @@ $this->breadcrumbs=array(
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 
-<p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
-</p>
+<div class="row">
+    <div class="column">
+        <?php echo CHtml::link('View Your Criteria', array('/criteria/view')); ?>
+    </div>
+    <div class="column">
+        <?php echo CHtml::link('Edit Criteria', array('/criteria/edit')); ?>
+    </div>
+    <div class="column">
+        <?php echo CHtml::link('Create new Criterion', array('/criteria/new')); ?>
+    </div>
+</div>

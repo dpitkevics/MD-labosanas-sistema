@@ -21,7 +21,7 @@ class AjaxController extends Controller
         if (Yii::app()->request->isAjaxRequest) {
             $baseDir = Yii::app()->basePath . '\\';
             $dataDir = $baseDir . '\\data\\data-'.$this->getDirAppendix().'\\';
-            $archiveDir = $baseDir . '\\archive\\archive-'.$this->getDirAppendix().'\\';
+            $archiveDir = $baseDir . 'archive\\archive-'.$this->getDirAppendix().'\\';
             $files = glob($dataDir.'*.zip');
             foreach ($files as $file) {
                 $name = explode ('\\', $file);

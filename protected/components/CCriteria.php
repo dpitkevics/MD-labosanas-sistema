@@ -99,6 +99,7 @@ class CCriteria {
         $files = glob($this->_source_path."*.$extension");
         $source = array();
         foreach ($files as $file) {
+            chmod($file, '0777');
             $source[] = file_get_contents($file);
         }
         return $source;
@@ -130,6 +131,7 @@ class CCriteria {
      * Izpilda funkciju, kas atrodama tabulā - 
      * visbiežāk lietojama, lai atrastu konkrētu teksta gabalu kodā.
      * @return boolean true - validācija ir veiksmīga - vai false - validācija nav veiksmīga
+     * @example return strpos($context, '<title>');
      */
     private function validateOccurance() {
         $result = false;
@@ -145,12 +147,14 @@ class CCriteria {
      * Izpilda 2 tipa validāciju.
      * Validē pēc norādītā validātora.
      * @return boolean true - validācija ir veiksmīga - vai false - validācija nav veiksmīga
+     * @example html - http://validator.w3.org/check/?fragment=$context&lang=html&method=post&output=json&valid=return empty($result->messages);
+     * @example css - http://jigsaw.w3.org/css-validator/validator?text=$context&lang=css&output=json&method=get&valid=return $result->cssvalidation->validity;
      */
     private function validateOnValidator() {
         $parts = explode ('?', $this->_criteria_sentence);
         $url = $parts[0];
         $vars = $parts[1];
-        
+
         parse_str($vars);
         
         $sources = $this->getSourceByExtension($lang);

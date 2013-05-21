@@ -4,7 +4,9 @@ class CriteriaController extends Controller
 {
 	public function actionCheck()
 	{
-		$this->render('check');
+            $criteria = new CCriteria(Criteria::model()->findByPk(2), 'C:\xampp\htdocs\md\protected\\archive\archive-johntestercom\6788\dp11058\\');
+            CVarDumper::dump($criteria->run());
+            $this->render('check');
 	}
 
 	public function actionGet()
@@ -21,6 +23,31 @@ class CriteriaController extends Controller
 	{
 		$this->render('set');
 	}
+        
+        public function actionNew()
+        {
+            $model=new Criteria('create');
+
+            // uncomment the following code to enable ajax-based validation
+            /*
+            if(isset($_POST['ajax']) && $_POST['ajax']==='criteria-new-form')
+            {
+                echo CActiveForm::validate($model);
+                Yii::app()->end();
+            }
+            */
+
+            if(isset($_POST['Criteria']))
+            {
+                $model->attributes=$_POST['Criteria'];
+                if($model->validate())
+                {
+                    // form inputs are valid, do something here
+                    return;
+                }
+            }
+            $this->render('new',array('model'=>$model));
+        }
 
 	// Uncomment the following methods and override them if needed
 	/*
