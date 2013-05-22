@@ -22,6 +22,8 @@ class AjaxController extends Controller
             $baseDir = Yii::app()->basePath . '\\';
             $dataDir = $baseDir . '\\data\\data-'.$this->getDirAppendix().'\\';
             $archiveDir = $baseDir . 'archive\\archive-'.$this->getDirAppendix().'\\';
+            if (!is_dir($archiveDir))
+                mkdir ($archiveDir);
             $files = glob($dataDir.'*.zip');
             foreach ($files as $file) {
                 $name = explode ('\\', $file);
@@ -29,13 +31,12 @@ class AjaxController extends Controller
                 $data = explode ('-', $name);
                 $zipID = explode ('.', end($data));
                 $zipID = $zipID[0];
-                
-                $hometask = Hometask::model()->findByAttributes(array('zipID'=>$zipID));
-                if ($hometask->userHometasks->user_id !== Yii::app()->user->id)
+                $hometask = UserHometask::model()->with('hometask', array('criteria' => array('condition' => array('zipID' => $zipID))))->findByAttributes(array('user_id' => Yii::app()->user->id));
+                if ($hometask->user_id !== Yii::app()->user->id)
                     continue;
+                $hometask = $hometask->hometask;
                 if (!$hometask || $hometask->isImported)
                     throw new CHttpException (404, "Not a valid hometask");
-                
                 $zipDir = $archiveDir . $zipID . '\\';
                 $zip = Yii::app()->zip;
                 $zip->extractZip($file, $zipDir);

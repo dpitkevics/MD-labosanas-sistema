@@ -24,11 +24,11 @@ $this->breadcrumbs=array(
         <?php foreach ($files as $file): ?>
         <?php $name = explode('\\', $file); ?>
         <p>
-            <?php if (isset($_GET['file']) && $file == $_GET['file']) echo '<strong>'; ?>
+            <?php if (isset($_GET['file']) && base64_encode($file) == $_GET['file']) echo '<strong>'; ?>
             <?php echo CHtml::link(
                     end($name), 
-                    array('/hometask/list', 'category'=>$_GET['category'], 'hid'=>$_GET['hid'], 'file'=>$file)); ?>
-            <?php if (isset($_GET['file']) && $file == $_GET['file']) echo '</strong>'; ?>
+                    array('/hometask/list', 'category'=>$_GET['category'], 'hid'=>$_GET['hid'], 'file'=>  base64_encode($file))); ?>
+            <?php if (isset($_GET['file']) && base64_encode($file) == $_GET['file']) echo '</strong>'; ?>
         </p>
         <?php endforeach; ?>
     <?php endif; ?>

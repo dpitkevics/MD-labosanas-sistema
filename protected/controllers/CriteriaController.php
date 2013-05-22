@@ -40,13 +40,41 @@ class CriteriaController extends Controller
             if(isset($_POST['Criteria']))
             {
                 $model->attributes=$_POST['Criteria'];
+                $model->timestamp = time();
+                $model->user_id = Yii::app()->user->id;
+                
+                if (isset($_POST['v']) && isset($_POST['n']) && isset($_POST['p'])
+                    && isset($_POST['fv']) && isset($_POST['fn']) && isset($_POST['fc'])) {
+                    $model->criteria_sentence = $this->generateClassString($model->public_name, $_POST['v'], $_POST['n'], $_POST['p'], $_POST['fv'], $_POST['fn'], $_POST['fc']);
+                }
                 if($model->validate())
                 {
+                    CVarDumper::dump($model->attributes);
                     // form inputs are valid, do something here
                     return;
                 }
             }
             $this->render('new',array('model'=>$model));
+        }
+        
+        public function actionClass()
+        {
+            $this->renderPartial('class');
+        }
+        
+        private function generateClassString($title, $var_visibilities, $var_names, $var_values, $fnc_visibilities, $fnc_names, $fnc_values) {
+            $title = ucfirst($title);
+            $classString = "class $title { " . PHP_EOL;
+            for ($i = 0; $i < sizeof ($var_visibilities); $i++) {
+                $classString .= "\t$var_visibilities[$i] \$$var_names[$i] = $var_values[$i];" . PHP_EOL;
+            }
+            for ($i = 0; $i < sizeof($fnc_visibilities); $i++) {
+                $classString .= "\t$fnc_visibilities[$i] function $fnc_names[$i] { " . PHP_EOL;
+                $classString .= "\t\t$fnc_values[$i]" . PHP_EOL;
+                $classString .= "\t}" . PHP_EOL;
+            }
+            $classString .= "} " . PHP_EOL;
+            return $classString;
         }
 
 	// Uncomment the following methods and override them if needed

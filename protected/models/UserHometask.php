@@ -57,8 +57,8 @@ class UserHometask extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'hometask' => array(self::BELONGS_TO, 'Hometasks', 'hometask_id'),
-			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
+			'hometask' => array(self::BELONGS_TO, 'Hometask', 'hometask_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 

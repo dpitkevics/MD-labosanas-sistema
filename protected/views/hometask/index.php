@@ -10,6 +10,9 @@ $this->breadcrumbs=array(
 <div class="column">
     <?php echo CHtml::link('Create a new hometask', array('/hometask/create')); ?>
 </div>
+<div class="colummn">
+    <?php echo CHtml::link('My hometasks', array('/hometask/viewHometasks')); ?>
+</div>
 <div class="column">
     <?php echo CHtml::link('Upload ZIP', array('/hometask/upload')); ?>
 </div>

@@ -9,66 +9,67 @@ class HometaskController extends Controller
 
 	public function actionList($category = null, $hid = null, $file = null)
 	{
-        $files = null;
-        $source = null;
-        $extension = null;
-        $hometask = Hometask::model()->findByPk($category);
-        if (!$hometask)
-            throw new CHttpException(404, "No hometask found");
-        if (isset($hid) && $hid !== null) {
-            $homework = ReceivedHomework::model()->findByPk($hid);
-            if (!$homework)
-                throw new CHttpException(404, "No homework found");
-            
-            $files = glob($homework->sourcePath."*");
-        }
-        if (isset($file) && $file !== null) {
-            $source = file_get_contents($file);
-            $extension = explode('\\', $file);
-            $extension = explode('.', end($extension));
-            $extension = end($extension);
-        }
-            
-		$this->render('list', array(
-            'hometasks'=>$hometask->receivedHomeworks, 
-            'files'=>$files, 
-            'source'=>$source,
-            'extension'=>$extension,
-        ));
+            $files = null;
+            $source = null;
+            $extension = null;
+            $hometask = Hometask::model()->findByPk($category);
+            if (!$hometask)
+                throw new CHttpException(404, "No hometask found");
+            if (isset($hid) && $hid !== null) {
+                $homework = ReceivedHomework::model()->findByPk($hid);
+                if (!$homework)
+                    throw new CHttpException(404, "No homework found");
+
+                $files = glob($homework->sourcePath."*");
+            }
+            if (isset($file) && $file !== null) {
+                $file = base64_decode($file);
+                $source = file_get_contents($file);
+                $extension = explode('\\', $file);
+                $extension = explode('.', end($extension));
+                $extension = end($extension);
+            }
+
+            $this->render('list', array(
+                'hometasks'=>$hometask->receivedHomeworks, 
+                'files'=>$files, 
+                'source'=>$source,
+                'extension'=>$extension,
+            ));
 	}
 
 	public function actionRun($hid = null)
 	{
-        $homework = ReceivedHomework::model()->findByPk($hid);
-        if (!$homework)
-            throw new CHttpException(404, "No homework found");
+            $homework = ReceivedHomework::model()->findByPk($hid);
+            if (!$homework)
+                throw new CHttpException(404, "No homework found");
+
+            $criterias = $homework->hometask->hometaskCriterias;
+
+            $sums = array(
+                'weight' => 0,
+                'user' => 0,
+            );
+            foreach ($criterias as $criteria) {
+                $sums['weight'] += $criteria->criteria->weight;
+
+                $crit = new CCriteria($criteria->criteria, $homework->sourcePath);
+                $validation[$criteria->criteria->id] = $crit->run();
+
+                $sums['user'] += ($validation[$criteria->criteria->id]?$criteria->criteria->weight:0);
+            }
         
-        $criterias = $homework->hometask->hometaskCriterias;
-        
-        $sums = array(
-            'weight' => 0,
-            'user' => 0,
-        );
-        foreach ($criterias as $criteria) {
-            $sums['weight'] += $criteria->criteria->weight;
-            
-            $crit = new CCriteria($criteria->criteria, $homework->sourcePath);
-            $validation[$criteria->criteria->id] = $crit->run();
-            
-            $sums['user'] += ($validation[$criteria->criteria->id]?$criteria->criteria->weight:0);
-        }
-        
-		$this->render('run', array('hw'=>$homework, 'validation'=>$validation, 'sums' => $sums));
+            $this->render('run', array('hw'=>$homework, 'validation'=>$validation, 'sums' => $sums));
 	}
 
 	public function actionShow($hid = null)
 	{
-        $hometask = ReceivedHomework::model()->findByPk($hid);
-        if (!$hometask)
-            throw new CHttpException(404, "No hometask found");
-        
-        $files = glob($hometask->sourcePath."*");
-		$this->renderPartial('show', array('files'=>$files));
+            $hometask = ReceivedHomework::model()->findByPk($hid);
+            if (!$hometask)
+                throw new CHttpException(404, "No hometask found");
+
+            $files = glob($hometask->sourcePath."*");
+            $this->renderPartial('show', array('files'=>$files));
 	}
     
         public function actionCreate()
@@ -107,6 +108,7 @@ class HometaskController extends Controller
         {
             if (isset($_FILES['Hometask']))
             {
+                CVarDumper::dump($_FILES);
                 $file = CUploadedFile::getInstanceByName('Hometask[upload]');
                 if (strpos($file->type, 'zip')===false && strpos($file->name, '.zip')===false)
                     throw new CHttpException(404, "This is not a valid zip file");
@@ -116,6 +118,14 @@ class HometaskController extends Controller
                     $this->redirect (array('/hometask/index'));
             }
             $this->render('upload');
+        }
+        
+        public function actionViewHometasks()
+        {
+            $userHometasks = UserHometask::model()->findAllByAttributes(array('user_id' => Yii::app()->user->id));
+            $this->render('viewHometasks', array(
+                'userHometasks' => $userHometasks,
+            ));
         }
 
 	// Uncomment the following methods and override them if needed
