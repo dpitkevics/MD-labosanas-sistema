@@ -35,18 +35,18 @@
                     3 => 'Error checking',
                     4 => 'User defined validation class',
                 ), array(
-                    'onchange' => 'js:checkStep($(this));'
+                    'onchange' => 'js:checkStep($(this));',
                 )); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
-        
+        <?php echo $form->labelEx($model,'criteria_sentence'); ?>
         <div class="sentence">
             <div class="row">
-                    <?php echo $form->labelEx($model,'criteria_sentence'); ?>
                     <?php echo $form->textArea($model,'criteria_sentence'); ?>
-                    <?php echo $form->error($model,'criteria_sentence'); ?>
             </div>
         </div>
+        <div class="hint">If using user defined class, there must be public method called "run"</div>
+        <?php echo $form->error($model,'criteria_sentence'); ?>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Submit'); ?>
@@ -68,4 +68,7 @@
             $(".sentence").html(sentence_content);
         }
     }
+    $(function () {
+        checkStep($("#Criteria_type"));
+    });
 </script>

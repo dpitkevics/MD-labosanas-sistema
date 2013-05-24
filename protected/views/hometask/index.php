@@ -7,6 +7,12 @@ $this->breadcrumbs=array(
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 
+<?php if(Yii::app()->user->hasFlash('success')):?>
+    <div class="info">
+        <?php echo Yii::app()->user->getFlash('success'); ?>
+    </div>
+<?php endif; ?>
+
 <div class="column">
     <?php echo CHtml::link('Create a new hometask', array('/hometask/create')); ?>
 </div>

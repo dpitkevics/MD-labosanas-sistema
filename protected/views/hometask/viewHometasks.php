@@ -27,6 +27,9 @@ $this->breadcrumbs=array(
         <div class="row">
             Term: <?php echo date('Y-m-d', $uht->hometask->term); ?>
         </div>
+        <div class="row">
+            <?php echo CHtml::link('Edit', array('hometask/update', 'id' => $uht->hometask->id)); ?>
+        </div>
         <hr />
     </div>
     <?php endforeach; ?>

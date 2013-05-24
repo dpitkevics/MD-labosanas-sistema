@@ -98,10 +98,45 @@ class HometaskController extends Controller
                     $user_hometask->hometask_id = $model->primaryKey;
                     $user_hometask->timestamp = time();
                     $user_hometask->save(false);
+                    Yii::app()->user->setFlash('success', "Hometask created!");
                     $this->refresh();
                 }
             }
             $this->render('create',array('model'=>$model));
+        }
+        
+        public function actionUpdate($id)
+        {
+            $model=Hometask::model()->findByPk($id);
+            $model->term = date('Y-m-d', $model->term);
+
+            // uncomment the following code to enable ajax-based validation
+            /*
+            if(isset($_POST['ajax']) && $_POST['ajax']==='hometask-create-form')
+            {
+                echo CActiveForm::validate($model);
+                Yii::app()->end();
+            }
+            */
+
+            if(isset($_POST['Hometask']))
+            {
+                $model->attributes=$_POST['Hometask'];
+                $model->isImported = 0;
+                $model->timestamp = time();
+                $model->term = strtotime($model->term);
+                if($model->save())
+                {
+                    $user_hometask = new UserHometask();
+                    $user_hometask->user_id = Yii::app()->user->id;
+                    $user_hometask->hometask_id = $model->primaryKey;
+                    $user_hometask->timestamp = time();
+                    $user_hometask->save(false);
+                    Yii::app()->user->setFlash('success', "Hometask updated!");
+                    $this->refresh();
+                }
+            }
+            $this->render('update',array('model'=>$model));
         }
         
         public function actionUpload()
@@ -114,8 +149,10 @@ class HometaskController extends Controller
                     throw new CHttpException(404, "This is not a valid zip file");
                 $baseDir = Yii::app()->basePath;
                 $dataDir = $baseDir . '\\data\\data-'.$this->getDirAppendix().'\\';
-                if ($file->saveAs($dataDir . $file->name))
+                if ($file->saveAs($dataDir . $file->name)) {
+                    Yii::app()->user->setFlash('success', 'Hometask uploaded!');
                     $this->redirect (array('/hometask/index'));
+                }
             }
             $this->render('upload');
         }

@@ -49,7 +49,7 @@
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Create'); ?>
+		<?php echo CHtml::submitButton('Update'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

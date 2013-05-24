@@ -43,13 +43,29 @@ class CriteriaController extends Controller
                 $model->timestamp = time();
                 $model->user_id = Yii::app()->user->id;
                 
-                if (isset($_POST['v']) && isset($_POST['n']) && isset($_POST['p'])
-                    && isset($_POST['fv']) && isset($_POST['fn']) && isset($_POST['fc'])) {
+                if (isset($_POST['v']) && !empty($_POST['v'][0]) && isset($_POST['n']) && !empty($_POST['n'][0]) && isset($_POST['p']) && !empty($_POST['p'][0])
+                    && isset($_POST['fv']) && !empty($_POST['fv'][0]) && isset($_POST['fn']) && !empty($_POST['fn'][0]) && isset($_POST['fc']) && !empty($_POST['fc'][0])) {
+                    $init = false;
+                    $c = 0;
+                    foreach ($_POST['fn'] as $fn) {
+                        if (($pos = strpos($fn, 'run('))!==false && $pos === 0) {
+                            if ($_POST['fv'][$c] != 'public')
+                                $model->addError('criteria_sentence', 'Method "run" must be public');
+                            $init = true;
+                        }
+                        $c++;
+                    } 
+                    if (!$init)
+                        $model->addError ('criteria_sentence', 'Method "run" not found');
+                    
                     $model->criteria_sentence = $this->generateClassString($model->public_name, $_POST['v'], $_POST['n'], $_POST['p'], $_POST['fv'], $_POST['fn'], $_POST['fc']);
                 }
-                if($model->validate())
+                if($model->validate(null, false))
                 {
-                    CVarDumper::dump($model->attributes);
+                    if ($model->save(false)) {
+                        Yii::app()->user->setFlash('success', "Criteria created!");
+                        $this->redirect(array('/criteria/index'));
+                    }
                     // form inputs are valid, do something here
                     return;
                 }
