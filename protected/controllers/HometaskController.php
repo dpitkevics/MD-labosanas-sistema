@@ -56,7 +56,7 @@ class HometaskController extends Controller
                 $crit = new CCriteria($criteria->criteria, $homework->sourcePath);
                 $validation[$criteria->criteria->id] = $crit->run();
 
-                $sums['user'] += ($validation[$criteria->criteria->id]?$criteria->criteria->weight:0);
+                $sums['user'] += ((strpos($validation[$criteria->criteria->id], '<a')=== false && $validation[$criteria->criteria->id])?$criteria->criteria->weight:0);
             }
         
             $this->render('run', array('hw'=>$homework, 'validation'=>$validation, 'sums' => $sums));

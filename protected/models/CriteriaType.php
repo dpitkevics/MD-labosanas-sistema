@@ -1,27 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "criterias".
+ * This is the model class for table "criteria_types".
  *
- * The followings are the available columns in table 'criterias':
+ * The followings are the available columns in table 'criteria_types':
  * @property integer $id
- * @property integer $user_id
- * @property string $public_name
- * @property double $weight
- * @property integer $type
- * @property string $criteria_sentence
+ * @property integer $criterion_type
+ * @property string $type_name
  * @property integer $timestamp
  *
  * The followings are the available model relations:
- * @property User $user
- * @property HometaskCriterias[] $hometaskCriteriases
+ * @property Criterias[] $criteriases
  */
-class Criteria extends CActiveRecord
+class CriteriaType extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Criteria the static model class
+	 * @return CriteriaType the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -33,7 +29,7 @@ class Criteria extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'criterias';
+		return 'criteria_types';
 	}
 
 	/**
@@ -44,13 +40,12 @@ class Criteria extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, public_name, weight, type, criteria_sentence, timestamp', 'required'),
-			array('user_id, type, timestamp', 'numerical', 'integerOnly'=>true),
-			array('weight', 'numerical'),
-			array('public_name', 'length', 'max'=>256),
+			array('criterion_type, type_name, timestamp', 'required'),
+			array('criterion_type, timestamp', 'numerical', 'integerOnly'=>true),
+			array('type_name', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, user_id, public_name, weight, type, criteria_sentence, timestamp', 'safe', 'on'=>'search'),
+			array('id, criterion_type, type_name, timestamp', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,9 +57,7 @@ class Criteria extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                        'type0' => array(self::BELONGS_TO, 'CriteriaType', 'type'),
-                        'user' => array(self::BELONGS_TO, 'User', 'user_id'),
-			'hometaskCriterias' => array(self::HAS_MANY, 'HometaskCriteria', 'criteria_id'),
+			'criteriases' => array(self::HAS_MANY, 'Criteria', 'type'),
 		);
 	}
 
@@ -75,11 +68,8 @@ class Criteria extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-                        'user_id' => 'User',
-			'public_name' => 'Public Name',
-			'weight' => 'Weight',
-			'type' => 'Type',
-			'criteria_sentence' => 'Criteria Sentence',
+			'criterion_type' => 'Criterion Type',
+			'type_name' => 'Type Name',
 			'timestamp' => 'Timestamp',
 		);
 	}
@@ -96,11 +86,8 @@ class Criteria extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-                $criteria->compare('user_id',$this->user_id);
-		$criteria->compare('public_name',$this->public_name,true);
-		$criteria->compare('weight',$this->weight);
-		$criteria->compare('type',$this->type);
-		$criteria->compare('criteria_sentence',$this->criteria_sentence,true);
+		$criteria->compare('criterion_type',$this->criterion_type);
+		$criteria->compare('type_name',$this->type_name,true);
 		$criteria->compare('timestamp',$this->timestamp);
 
 		return new CActiveDataProvider($this, array(

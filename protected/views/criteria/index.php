@@ -18,9 +18,9 @@ $this->breadcrumbs=array(
         <?php echo CHtml::link('View Your Criteria', array('/criteria/view')); ?>
     </div>
     <div class="column">
-        <?php echo CHtml::link('Edit Criteria', array('/criteria/edit')); ?>
+        <?php echo CHtml::link('Create new Criterion', array('/criteria/new')); ?>
     </div>
     <div class="column">
-        <?php echo CHtml::link('Create new Criterion', array('/criteria/new')); ?>
+        <?php echo CHtml::link('Set Criterion to hometask', array('/criteria/set')); ?>
     </div>
 </div>

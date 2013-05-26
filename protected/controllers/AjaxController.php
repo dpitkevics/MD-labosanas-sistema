@@ -86,6 +86,31 @@ class AjaxController extends Controller
             echo file_get_contents($url);
         }
     }
+    
+    public function actionCriteriaState()
+    {
+        if (Yii::app()->request->isAjaxRequest)
+        {
+            $entry = $_POST['entry'];
+            $cid = $_POST['cid'];
+            $hid = $_POST['hid'];
+            switch ($entry) {
+                case 'add':
+                    $hc = new HometaskCriteria;
+                    $hc->hometask_id = $hid;
+                    $hc->criteria_id = $cid;
+                    $hc->timestamp = time();
+                    $hc->save();
+                    break;
+                case 'del':
+                    $hc = HometaskCriteria::model()->findByAttributes(array('hometask_id' => $hid, 'criteria_id' => $cid));
+                    if (!$hc)
+                        return;
+                    $hc->delete();
+                    break;
+            }
+        }
+    }
 
 	// Uncomment the following methods and override them if needed
 	/*

@@ -51,6 +51,8 @@ class CCriteria {
      */
     private $_source_code = array();
     
+    private static $_js_c = 0;
+    
     /**
      * Konstruktors - sadefinēs mainīgos
      * 
@@ -118,7 +120,7 @@ class CCriteria {
             case 2:
                 return $this->validateOnValidator();
             case 3:
-                return $this->validateErrors();
+                return $this->validateJs();
             case 4:
                 return $this->validateClass();
             default:
@@ -194,6 +196,26 @@ class CCriteria {
                 return false;
             return true;
         }
+    }
+    
+    private function validateJs() {
+        //$script = $this->_criteria_sentence;
+        $cs = Yii::app()->clientScript->registerScript('js_' . (++self::$_js_c), 'function js_'.self::$_js_c.'() { var $iframe = window.frames["iframe"]; ' . $this->_criteria_sentence . '}', CClientScript::POS_BEGIN);
+        return CHtml::link('Run JS', '#', array(
+            'onclick' => 'js:js_'.self::$_js_c.'()'
+        ));
+    }
+    
+    private function validateClass() {
+        $class = $this->_criteria_sentence;
+        eval ($class);
+        $className = ucfirst(str_replace(' ', '_', $this->_public_name));
+        $object = new $className;
+        $object->sources = $this->getSources();
+        if ($object->run())
+            return true;
+        else
+            return false;
     }
     
     private function validateErrors() {
