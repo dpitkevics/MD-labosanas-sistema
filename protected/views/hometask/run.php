@@ -13,10 +13,19 @@ $this->breadcrumbs=array(
         <h3>Tests</h3>
     </div>
     <div class="row">
-        Nopelnīti <span id="received_pts"><?php echo $sums['user']; ?></span> punkti no <span id="total_pts"><?php echo $sums['weight']; ?></span>.
+        Received <span id="received_pts"><?php echo $sums['user']; ?></span> points of <span id="total_pts"><?php echo $sums['weight']; ?></span>.
     </div>
     <div class="row">
-        Piedāvātā atzīme: <span id="suggested_mark"><?php echo round(($sums['user'] / ($sums['weight'] / 100)) / 10); ?></span>
+        <div class="column">
+            Suggested mark: <strong><span id="suggested_mark"><?php echo round(($sums['user'] / ($sums['weight'] / 100)) / 10); ?></span></strong>
+        </div>
+        <div class="column">
+            <?php echo CHtml::ajaxLink('Save mark', array('/ajax/saveMark'), array('type' => 'POST', 'data' => array(
+                'hid' => (int)$_GET['hid'], 
+                'mark' => 'js:$("#suggested_mark").text()',
+            ), 'success' => 'js:function (html) { alert("Mark saved to database"); }')); ?>
+        </div>
+        <div class="clearfix"></div>
     </div>
     <?php foreach ($hw->hometask->hometaskCriterias as $criteria): ?>
     <div class="row">
@@ -41,11 +50,21 @@ $this->breadcrumbs=array(
         var $total_pts = parseFloat($("#total_pts").text());
         var $rec_pts = parseFloat($("#received_pts").text());
         
+        var rec_size = $("#received_pts").text().split(".")[1].length;
+        var weight_size = weight.toString().split(".")[1].length;
+        var res;
+        if (rec_size > weight_size)
+            res = rec_size;
+        else
+            res = weight_size;
+        
         if (object.is(":checked")) {
-            $("#received_pts").text($rec_pts + weight);
+            var sum = $rec_pts + weight;
+            $("#received_pts").text(sum.toFixed(res));
             $("#suggested_mark").text(Math.round((($rec_pts + weight) / ($total_pts / 100)) / 10));
         } else {
-            $("#received_pts").text($rec_pts - weight);
+            var dis = $rec_pts - weight;
+            $("#received_pts").text(dis.toFixed(res));
             $("#suggested_mark").text(Math.round((($rec_pts - weight) / ($total_pts / 100)) / 10));
         }
     }

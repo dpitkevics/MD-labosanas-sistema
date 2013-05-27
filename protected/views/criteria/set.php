@@ -35,8 +35,9 @@ if ($_step === 2) {
     <div class="column">
         <?php echo CHtml::beginForm(); ?>
         <?php foreach ($hometasks as $ht): ?>
+        <?php $htc = HometaskCriteria::model()->findByAttributes(array('hometask_id' => $ht->hometask->id, 'criteria_id' => (int)$_GET['cid'])); ?>
         <div class="row">
-            <?php echo CHtml::checkBox('check[]', (empty($ht->hometask->hometaskCriterias)?false:true), array(
+            <?php echo CHtml::checkBox('check[]', (!$htc?false:true), array(
                 'value' => $ht->hometask->id,
                 'onchange' => 'js:changeCriteriaState($(this), '.(int)$_GET['cid'].', '.$ht->hometask->id.');',
             )); ?>

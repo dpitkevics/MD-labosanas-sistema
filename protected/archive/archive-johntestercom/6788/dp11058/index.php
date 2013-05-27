@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
 		<table id="userdata">
 			<tr id="titles">
 				<th>Legend title</th>
-				<td><input type="text" name="label1" id="f" tabindex="1" <?=($p!=null)?'value="'.htmlspecialchars($p['label1']).'"':''?> <?=(in_array('label1', $error))?'class="error"':''?> /></td>
+				<td><input type="text" name="label1" tabindex="1" <?=($p!=null)?'value="'.htmlspecialchars($p['label1']).'"':''?> <?=(in_array('label1', $error))?'class="error"':''?> /></td>
 				<td><input type="text" name="label2" tabindex="3" <?=($p!=null)?'value="'.htmlspecialchars($p['label2']).'"':''?> <?=(in_array('label2', $error))?'class="error"':''?> /></td>
 				<td><input type="text" name="label3" tabindex="5" <?=($p!=null)?'value="'.htmlspecialchars($p['label3']).'"':''?> <?=(in_array('label3', $error))?'class="error"':''?> /></td>
 				<td><input type="text" name="label4" tabindex="7" <?=($p!=null)?'value="'.htmlspecialchars($p['label4']).'"':''?> <?=(in_array('label4', $error))?'class="error"':''?> /></td>

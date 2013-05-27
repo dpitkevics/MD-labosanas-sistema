@@ -13,7 +13,7 @@ $this->breadcrumbs=array(
     <div class="row">
         <?php if (isset($_GET['hid']) && $hometask->id==$_GET['hid']) echo '<strong>'; ?>
         <?php echo CHtml::link(
-                $hometask->studentIDNumber, 
+                $hometask->studentIDNumber . ($hometask->receivedHomeworkGrades?' <strong>('.$hometask->receivedHomeworkGrades->grade.')</strong> ':''), 
                 array('/hometask/list', 'category'=>$_GET['category'], 'hid'=>$hometask->id)); ?>
         <?php if (isset($_GET['hid']) && $hometask->id==$_GET['hid']) echo '</strong>'; ?>
     </div>

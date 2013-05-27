@@ -20,7 +20,7 @@ class AjaxController extends Controller
     {
         if (Yii::app()->request->isAjaxRequest) {
             $baseDir = Yii::app()->basePath . '\\';
-            $dataDir = $baseDir . '\\data\\data-'.$this->getDirAppendix().'\\';
+            $dataDir = $baseDir . 'data\\data-'.$this->getDirAppendix().'\\';
             $archiveDir = $baseDir . 'archive\\archive-'.$this->getDirAppendix().'\\';
             if (!is_dir($archiveDir))
                 mkdir ($archiveDir);
@@ -109,6 +109,26 @@ class AjaxController extends Controller
                     $hc->delete();
                     break;
             }
+        }
+    }
+    
+    public function actionSaveMark()
+    {
+        if (Yii::app()->request->isAjaxRequest)
+        {
+            $hid = (int)$_POST['hid'];
+            $grade = (int)$_POST['mark'];
+            $rhg = ReceivedHomeworkGrade::model()->findByAttributes(array('received_homework_id' => $hid));
+            if (!$rhg) {
+                $rhg = new ReceivedHomeworkGrade;
+                $rhg->received_homework_id = $hid;
+                $rhg->grade = $grade;
+                $rhg->timestamp = time();
+            } else {
+                $rhg->grade = $grade;
+                $rhg->timestamp = time();
+            }
+            $rhg->save();
         }
     }
 
