@@ -80,6 +80,7 @@ class HometaskController extends AuthController
             
             if(isset($_POST['ajax']) && $_POST['ajax']==='hometask-create-form')
             {
+                $_POST['Hometask']['term'] = strtotime($_POST['Hometask']['term']);
                 echo CActiveForm::validate($model);
                 Yii::app()->end();
             }
