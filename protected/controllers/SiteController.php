@@ -91,7 +91,7 @@ class SiteController extends Controller
                     $model->password = sha1($model->password);
                     if ($model->save(false)) {
                         $baseDir = Yii::app()->basePath;
-                        $dataDir = $baseDir . '\\data\\data-'.str_replace('@', '', str_replace('.', '', $model->email)).'\\';
+                        $dataDir = $baseDir . DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'data-'.str_replace('@', '', str_replace('.', '', $model->email)).DIRECTORY_SEPARATOR;
                         if (!is_dir($dataDir))
                             mkdir ($dataDir);
                         Yii::app()->user->setFlash('success', 'Hometask uploaded!');

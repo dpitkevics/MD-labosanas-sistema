@@ -19,14 +19,14 @@ class AjaxController extends Controller
     public function actionImportHometasks()
     {
         if (Yii::app()->request->isAjaxRequest) {
-            $baseDir = Yii::app()->basePath . '\\';
-            $dataDir = $baseDir . 'data\\data-'.$this->getDirAppendix().'\\';
-            $archiveDir = $baseDir . 'archive\\archive-'.$this->getDirAppendix().'\\';
+            $baseDir = Yii::app()->basePath . DIRECTORY_SEPARATOR;
+            $dataDir = $baseDir . 'data'.DIRECTORY_SEPARATOR.'data-'.$this->getDirAppendix().DIRECTORY_SEPARATOR;
+            $archiveDir = $baseDir . 'archive'.DIRECTORY_SEPARATOR.'archive-'.$this->getDirAppendix().DIRECTORY_SEPARATOR;
             if (!is_dir($archiveDir))
                 mkdir ($archiveDir);
             $files = glob($dataDir.'*.zip');
             foreach ($files as $file) {
-                $name = explode ('\\', $file);
+                $name = explode (DIRECTORY_SEPARATOR, $file);
                 $name = end($name);
                 $data = explode ('-', $name);
                 $zipID = explode ('.', end($data));
@@ -37,17 +37,17 @@ class AjaxController extends Controller
                 $hometask = $hometask->hometask;
                 if (!$hometask || $hometask->isImported)
                     throw new CHttpException (404, "Not a valid hometask");
-                $zipDir = $archiveDir . $zipID . '\\';
+                $zipDir = $archiveDir . $zipID . DIRECTORY_SEPARATOR;
                 $zip = Yii::app()->zip;
                 $zip->extractZip($file, $zipDir);
                 
-                $zips = glob($archiveDir.$zipID.'\\*');
+                $zips = glob($archiveDir.$zipID.DIRECTORY_SEPARATOR.'*');
                 foreach ($zips as $single) {
-                    $singleName = explode('\\', $single);
+                    $singleName = explode(DIRECTORY_SEPARATOR, $single);
                     $singleName = explode('_', end($singleName));
                     if (count($singleName) < 2) { continue; }
                     $stAplNr = $singleName[1];
-                    $zip->extractZip($single, $archiveDir.$zipID.'\\'.$stAplNr.'\\');
+                    $zip->extractZip($single, $archiveDir.$zipID.DIRECTORY_SEPARATOR.$stAplNr.DIRECTORY_SEPARATOR);
                     
                     $student = Student::model()->findByAttributes(array('studentIDNumber'=>$stAplNr));
                     if (!$student) {
@@ -63,7 +63,7 @@ class AjaxController extends Controller
                     $receivedHomework = new ReceivedHomework;
                     $receivedHomework->homestaskID = $hometask->id;
                     $receivedHomework->studentIDNumber = $student->studentIDNumber;
-                    $receivedHomework->sourcePath = $archiveDir.$zipID.'\\'.$stAplNr.'\\';
+                    $receivedHomework->sourcePath = $archiveDir.$zipID.DIRECTORY_SEPARATOR.$stAplNr.DIRECTORY_SEPARATOR;
                     $receivedHomework->timestamp = time();
                     $receivedHomework->save();
                     

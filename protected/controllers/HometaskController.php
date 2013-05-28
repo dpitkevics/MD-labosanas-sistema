@@ -25,7 +25,7 @@ class HometaskController extends Controller
             if (isset($file) && $file !== null) {
                 $file = base64_decode($file);
                 $source = file_get_contents($file);
-                $extension = explode('\\', $file);
+                $extension = explode(DIRECTORY_SEPARATOR, $file);
                 $extension = explode('.', end($extension));
                 $extension = end($extension);
             }
@@ -147,7 +147,7 @@ class HometaskController extends Controller
                 if (strpos($file->type, 'zip')===false && strpos($file->name, '.zip')===false)
                     throw new CHttpException(404, "This is not a valid zip file");
                 $baseDir = Yii::app()->basePath;
-                $dataDir = $baseDir . '\\data\\data-'.$this->getDirAppendix().'\\';
+                $dataDir = $baseDir . DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'data-'.$this->getDirAppendix().DIRECTORY_SEPARATOR;
                 if ($file->saveAs($dataDir . $file->name)) {
                     Yii::app()->user->setFlash('success', 'Hometask uploaded!');
                     $this->redirect (array('/hometask/index'));

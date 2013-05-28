@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 <?php $c = 0; ?>
 <div class="box">
     <?php foreach ($files as $file): ?>
-    <?php $name = explode('\\', $file); ?>
+    <?php $name = explode(DIRECTORY_SEPARATOR, $file); ?>
     <p>
         <?php echo CHtml::ajaxLink(
                 end($name), 

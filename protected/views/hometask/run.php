@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
-<?php $url = Yii::app()->request->baseUrl . "\\protected\\archive\\archive-" . $this->getDirAppendix() . '\\' . $hw->hometask->zipID . '\\' . $hw->studentIDNumber . '\\'; ?>
+<?php $url = Yii::app()->request->baseUrl . DIRECTORY_SEPARATOR."protected".DIRECTORY_SEPARATOR."archive".DIRECTORY_SEPARATOR."archive-" . $this->getDirAppendix() . DIRECTORY_SEPARATOR . $hw->hometask->zipID . DIRECTORY_SEPARATOR . $hw->studentIDNumber . DIRECTORY_SEPARATOR; ?>
 <div class="box">
     <div class="row">
         <h3>Tests</h3>

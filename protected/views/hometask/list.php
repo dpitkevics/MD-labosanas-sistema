@@ -22,7 +22,7 @@ $this->breadcrumbs=array(
 <div class="column" id="hometaskFiles">
     <?php if ($files !== null): ?>
         <?php foreach ($files as $file): ?>
-        <?php $name = explode('\\', $file); ?>
+        <?php $name = explode(DIRECTORY_SEPARATOR, $file); ?>
         <p>
             <?php if (isset($_GET['file']) && base64_encode($file) == $_GET['file']) echo '<strong>'; ?>
             <?php echo CHtml::link(
