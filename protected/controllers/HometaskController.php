@@ -1,6 +1,6 @@
 <?php
 
-class HometaskController extends Controller
+class HometaskController extends AuthController
 {
 	public function actionIndex()
 	{

@@ -1,6 +1,6 @@
 <?php
 
-class CriteriaController extends Controller
+class CriteriaController extends AuthController
 {
 	public function actionCheck()
 	{
