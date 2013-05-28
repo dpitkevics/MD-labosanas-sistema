@@ -143,7 +143,6 @@ class HometaskController extends Controller
         {
             if (isset($_FILES['Hometask']))
             {
-                CVarDumper::dump($_FILES);
                 $file = CUploadedFile::getInstanceByName('Hometask[upload]');
                 if (strpos($file->type, 'zip')===false && strpos($file->name, '.zip')===false)
                     throw new CHttpException(404, "This is not a valid zip file");

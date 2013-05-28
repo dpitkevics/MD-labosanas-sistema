@@ -94,6 +94,7 @@ class SiteController extends Controller
                         $dataDir = $baseDir . '\\data\\data-'.str_replace('@', '', str_replace('.', '', $model->email)).'\\';
                         if (!is_dir($dataDir))
                             mkdir ($dataDir);
+                        Yii::app()->user->setFlash('success', 'Hometask uploaded!');
                         $this->redirect (array('/site/index'));
                     }
                     // form inputs are valid, do something here
