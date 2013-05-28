@@ -2,13 +2,19 @@
 /* @var $this CriteriaController */
 /* @var $model Criteria */
 /* @var $form CActiveForm */
+
+$this->breadcrumbs = array(
+    'Criteria' => array('/criteria/index'),
+    'Edit'
+);
+
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'criteria-new-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>

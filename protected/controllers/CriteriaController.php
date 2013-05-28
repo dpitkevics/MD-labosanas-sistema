@@ -47,13 +47,13 @@ class CriteriaController extends Controller
             $model = Criteria::model()->findByPk($id);
 
             // uncomment the following code to enable ajax-based validation
-            /*
+            
             if(isset($_POST['ajax']) && $_POST['ajax']==='criteria-new-form')
             {
                 echo CActiveForm::validate($model);
                 Yii::app()->end();
             }
-            */
+            
 
             if(isset($_POST['Criteria']))
             {
@@ -96,13 +96,13 @@ class CriteriaController extends Controller
             $model=new Criteria('create');
 
             // uncomment the following code to enable ajax-based validation
-            /*
+            
             if(isset($_POST['ajax']) && $_POST['ajax']==='criteria-new-form')
             {
                 echo CActiveForm::validate($model);
                 Yii::app()->end();
             }
-            */
+            
 
             if(isset($_POST['Criteria']))
             {

@@ -2,9 +2,14 @@
 /* @var $this HometaskController */
 /* @var $model Hometask */
 /* @var $form CActiveForm */
+$this->breadcrumbs = array(
+    'Hometasks' => array('/hometask/index'),
+    'Update'
+);
+
 ?>
 
-<h1>Create hometask</h1>
+<h1>Update hometask</h1>
 
 <?php if(Yii::app()->user->hasFlash('success')):?>
     <div class="info">
@@ -16,7 +21,7 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'hometask-create-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>

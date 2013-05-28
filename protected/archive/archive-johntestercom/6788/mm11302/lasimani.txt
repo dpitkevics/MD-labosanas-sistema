@@ -1,1 +1,0 @@
-Tiek pieņemts, ka kļūdaini lauki var būt tikai skaitlisko vērtību ievadlauki. Legend title lauki neskatoties uz vērtību un to vai vispār ir vērtība vienmēr ir "pareizi".

@@ -1,7 +1,10 @@
 <?php
-/* @var $this HometaskController */
-/* @var $model Hometask */
-/* @var $form CActiveForm */
+
+$this->breadcrumbs = array(
+    'Hometask' => array('/hometask/index'),
+    'Create'
+);
+
 ?>
 
 <h1>Create hometask</h1>
@@ -16,7 +19,7 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'hometask-create-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>

@@ -77,13 +77,13 @@ class HometaskController extends Controller
             $model=new Hometask('create');
 
             // uncomment the following code to enable ajax-based validation
-            /*
+            
             if(isset($_POST['ajax']) && $_POST['ajax']==='hometask-create-form')
             {
                 echo CActiveForm::validate($model);
                 Yii::app()->end();
             }
-            */
+            
 
             if(isset($_POST['Hometask']))
             {
@@ -111,13 +111,13 @@ class HometaskController extends Controller
             $model->term = date('Y-m-d', $model->term);
 
             // uncomment the following code to enable ajax-based validation
-            /*
+            
             if(isset($_POST['ajax']) && $_POST['ajax']==='hometask-create-form')
             {
                 echo CActiveForm::validate($model);
                 Yii::app()->end();
             }
-            */
+            
 
             if(isset($_POST['Hometask']))
             {

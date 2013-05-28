@@ -44,7 +44,9 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, name, lastname, email, timestamp', 'required'),
+			array('username, password, verifyPassword, name, lastname, email, timestamp', 'required'),
+                        array('password', 'length', 'min' => 6),
+                        array('verifyPassword', 'compare', 'compareAttribute'=>'password', 'on'=>'register'),
 			array('timestamp', 'numerical', 'integerOnly'=>true),
 			array('username, password, email', 'length', 'max'=>128),
 			array('name', 'length', 'max'=>32),
@@ -54,7 +56,7 @@ class User extends CActiveRecord
                         array('username, email', 'unique'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, password, name, lastname, email, timestamp', 'safe', 'on'=>'search'),
+			array('id, username, password, verifyPassword, name, lastname, email, timestamp', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,6 +82,7 @@ class User extends CActiveRecord
 			'id' => 'ID',
 			'username' => 'Username',
 			'password' => 'Password',
+                        'verifyPassowrd' => 'Verify Password',
 			'name' => 'Name',
 			'lastname' => 'Lastname',
 			'email' => 'Email',
@@ -101,6 +104,7 @@ class User extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
+                $criteria->compare('verifyPassword',$this->verifyPassword);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('lastname',$this->lastname,true);
 		$criteria->compare('email',$this->email,true);

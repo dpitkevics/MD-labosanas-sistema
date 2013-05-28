@@ -138,9 +138,14 @@ class CCriteria {
     private function validateOccurance() {
         $result = false;
         foreach ($this->_source_code as $context) {
+            ob_start();
             if (eval ($this->_criteria_sentence)) {
                 $result = true;
             }
+            $errors = ob_get_clean();
+            ob_end_clean();
+            if ($errors)
+                throw new CHttpException(404, "Invalid criteria sentence with public name: " . $this->_public_name . " and sentence: " . $this->_criteria_sentence);
         }
         return $result;
     }
@@ -162,6 +167,7 @@ class CCriteria {
         $sources = $this->getSourceByExtension($lang);
         
         foreach ($sources as $source) {
+            ob_start();
             $vars = str_replace('$context', urlencode($source), $vars);
             
             $pos = strpos($vars, 'valid');
@@ -192,7 +198,11 @@ class CCriteria {
                     $result->messages = array();
                     break;
             }
-            if (!eval ($valid)) 
+            $evald = eval($valid);
+            $errors = ob_get_clean();
+            if ($errors)
+                throw new CHttpException(404, "Invalid criteria sentence with public name: " . $this->_public_name . " and sentence: " . $this->_criteria_sentence);
+            if (!$evald) 
                 return false;
             return true;
         }
@@ -208,10 +218,14 @@ class CCriteria {
     
     private function validateClass() {
         $class = $this->_criteria_sentence;
+        ob_start();
         eval ($class);
         $className = ucfirst(str_replace(' ', '_', $this->_public_name));
         $object = new $className;
         $object->sources = $this->getSources();
+        $errors = ob_get_clean();
+        if ($errors)
+            throw new CHttpException(404, "Invalid criteria sentence with public name: " . $this->_public_name . " and sentence: " . $this->_criteria_sentence);
         if ($object->run())
             return true;
         else

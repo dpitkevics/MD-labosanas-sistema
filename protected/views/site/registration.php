@@ -26,6 +26,12 @@
 		<?php echo $form->passwordField($model,'password'); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
+        
+        <div class="row">
+                <?php echo $form->labelEx($model,'verifyPassword'); ?>
+                <?php echo $form->passwordField($model,'verifyPassword'); ?>
+                <?php echo $form->error($model, 'verifyPassword'); ?>
+        </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>

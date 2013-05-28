@@ -12,38 +12,44 @@ $this->breadcrumbs=array(
     <div class="row">
         <h3>Tests</h3>
     </div>
-    <div class="row">
-        Received <span id="received_pts"><?php echo $sums['user']; ?></span> points of <span id="total_pts"><?php echo $sums['weight']; ?></span>.
-    </div>
-    <div class="row">
-        <div class="column">
-            Suggested mark: <strong><span id="suggested_mark"><?php echo round(($sums['user'] / ($sums['weight'] / 100)) / 10); ?></span></strong>
+    <?php if (!empty($hw->hometask->hometaskCriterias)): ?>
+        <div class="row">
+            Received <span id="received_pts"><?php echo $sums['user']; ?></span> points of <span id="total_pts"><?php echo $sums['weight']; ?></span>.
         </div>
-        <div class="column">
-            <?php echo CHtml::ajaxLink('Save mark', array('/ajax/saveMark'), array('type' => 'POST', 'data' => array(
-                'hid' => (int)$_GET['hid'], 
-                'mark' => 'js:$("#suggested_mark").text()',
-            ), 'success' => 'js:function (html) { alert("Mark saved to database"); }')); ?>
+        <div class="row">
+            <div class="column">
+                Suggested mark: <strong><span id="suggested_mark"><?php echo round(($sums['user'] / ($sums['weight'] / 100)) / 10); ?></span></strong>
+            </div>
+            <div class="column">
+                <?php echo CHtml::ajaxLink('Save mark', array('/ajax/saveMark'), array('type' => 'POST', 'data' => array(
+                    'hid' => (int)$_GET['hid'], 
+                    'mark' => 'js:$("#suggested_mark").text()',
+                ), 'success' => 'js:function (html) { alert("Mark saved to database"); }')); ?>
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-    </div>
-    <?php foreach ($hw->hometask->hometaskCriterias as $criteria): ?>
-    <div class="row">
-        <strong><?php echo $criteria->criteria->public_name; ?>:</strong>
-        <?php if ((strpos($validation[$criteria->criteria->id], '<a')!==false)): ?>
-        <?php echo $validation[$criteria->criteria->id]; ?>
-        <?php echo CHtml::checkBox($criteria->criteria->id, false,  array(
-            'onclick' => 'js:updatePts($(this), ' . $criteria->criteria->weight . ');'
-        )); ?>
-        <?php else: ?>
-        <span style="color:<?php echo (($validation[$criteria->criteria->id])?"green":"red"); ?>;">
-            <?php echo (($validation[$criteria->criteria->id])?"OK":"Not OK"); ?>
-        </span>
-        <?php endif; ?>
-    <?php endforeach; ?>
+        <?php foreach ($hw->hometask->hometaskCriterias as $criteria): ?>
+        <div class="row">
+            <strong><?php echo $criteria->criteria->public_name; ?>:</strong>
+            <?php if ((strpos($validation[$criteria->criteria->id], '<a')!==false)): ?>
+            <?php echo $validation[$criteria->criteria->id]; ?>
+            <?php echo CHtml::checkBox($criteria->criteria->id, false,  array(
+                'onclick' => 'js:updatePts($(this), ' . $criteria->criteria->weight . ');'
+            )); ?>
+            <?php else: ?>
+            <span style="color:<?php echo (($validation[$criteria->criteria->id])?"green":"red"); ?>;">
+                <?php echo (($validation[$criteria->criteria->id])?"OK":"Not OK"); ?>
+            </span>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <div class="row">
+            <?php echo CHtml::link('Add new Criterion', array('/criteria/new')); ?>
+        </div>
+    <?php endif; ?>
 </div>
 <div class="container">
-    <iframe src="<?php echo $url; ?>" frameborder="0" marginheight="0" marginwidth="0" width="95%" height="600px" scrolling="auto" id="iframe"></iframe>
+    <iframe src="<?php echo $url . $hw->hometask->indexFile; ?>" frameborder="0" marginheight="0" marginwidth="0" width="95%" height="600px" scrolling="auto" id="iframe"></iframe>
 </div>
 <script>
     function updatePts(object, weight) {
