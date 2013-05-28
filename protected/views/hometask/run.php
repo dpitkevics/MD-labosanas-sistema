@@ -26,6 +26,9 @@ $this->breadcrumbs=array(
                     'mark' => 'js:$("#suggested_mark").text()',
                 ), 'success' => 'js:function (html) { alert("Mark saved to database"); }')); ?>
             </div>
+            <div class="column">
+                <?php echo CHtml::link('Edit mark', '#', array('onclick' => 'js:promptEdit();')); ?>
+            </div>
             <div class="clearfix"></div>
         </div>
         <?php foreach ($hw->hometask->hometaskCriterias as $criteria): ?>
@@ -52,6 +55,12 @@ $this->breadcrumbs=array(
     <iframe src="<?php echo $url . $hw->hometask->indexFile; ?>" frameborder="0" marginheight="0" marginwidth="0" width="95%" height="600px" scrolling="auto" id="iframe"></iframe>
 </div>
 <script>
+    function promptEdit() {
+        var mark=prompt("Enter new mark");
+        if (mark != null) {
+            $("#suggested_mark").text(mark);
+        }
+    }
     function updatePts(object, weight) {
         var $total_pts = parseFloat($("#total_pts").text());
         var $rec_pts = parseFloat($("#received_pts").text());
