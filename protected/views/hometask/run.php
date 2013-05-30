@@ -24,7 +24,8 @@ $this->breadcrumbs=array(
                 <?php echo CHtml::ajaxLink('Save mark', array('/ajax/saveMark'), array('type' => 'POST', 'data' => array(
                     'hid' => (int)$_GET['hid'], 
                     'mark' => 'js:$("#suggested_mark").text()',
-                ), 'success' => 'js:function (html) { alert("Mark saved to database"); }')); ?>
+                ),  'success' => 'js:function (html) { alert("Mark saved to database"); }',
+                    'error' => 'js:function () { alert("Failed to save mark. Check if mark is correct."); }')); ?>
             </div>
             <div class="column">
                 <?php echo CHtml::link('Edit mark', '#', array('onclick' => 'js:promptEdit();')); ?>
@@ -58,15 +59,26 @@ $this->breadcrumbs=array(
     function promptEdit() {
         var mark=prompt("Enter new mark");
         if (mark != null) {
-            $("#suggested_mark").text(mark);
+            if (mark >= 0 && mark <= 10)
+                $("#suggested_mark").text(mark);
+            else
+                alert("Invalid mark");
         }
     }
     function updatePts(object, weight) {
         var $total_pts = parseFloat($("#total_pts").text());
         var $rec_pts = parseFloat($("#received_pts").text());
         
-        var rec_size = $("#received_pts").text().split(".")[1].length;
-        var weight_size = weight.toString().split(".")[1].length;
+        var rec_size, weight_size;
+        if (strpos($("#received_pts").text(), '.')===false)
+            rec_size = 0;
+        else
+            rec_size = $("#received_pts").text().split(".")[1].length;
+        
+        if (strpos(weight.toString(), '.')===false)
+            weight_size = 0;
+        else
+            weight_size = weight.toString().split(".")[1].length;
         var res;
         if (rec_size > weight_size)
             res = rec_size;
@@ -82,5 +94,9 @@ $this->breadcrumbs=array(
             $("#received_pts").text(dis.toFixed(res));
             $("#suggested_mark").text(Math.round((($rec_pts - weight) / ($total_pts / 100)) / 10));
         }
+    }
+    function strpos (haystack, needle, offset) {
+        var i = (haystack+'').indexOf(needle, (offset || 0));
+        return i === -1 ? false : i;
     }
 </script>

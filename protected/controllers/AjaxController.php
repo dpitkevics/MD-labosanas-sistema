@@ -5,7 +5,7 @@ class AjaxController extends AuthController
     public function actionHomeworkTypes()
     {
         if (Yii::app()->request->isAjaxRequest) {
-            $hometasks = Hometask::model()->findAll();
+            $hometasks = Hometask::model()->findAllByAttributes(array('isImported' => 1));
             foreach ($hometasks as $hometask) {
                 if ($hometask->userHometasks->user_id === Yii::app()->user->id)
                     $rHometasks[] = $hometask;
@@ -118,6 +118,8 @@ class AjaxController extends AuthController
         {
             $hid = (int)$_POST['hid'];
             $grade = (int)$_POST['mark'];
+            if ($grade < 0 || $grade > 10)
+                throw new CHttpException(404, "Mark is invalid");
             $rhg = ReceivedHomeworkGrade::model()->findByAttributes(array('received_homework_id' => $hid));
             if (!$rhg) {
                 $rhg = new ReceivedHomeworkGrade;

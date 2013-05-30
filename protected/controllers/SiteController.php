@@ -52,6 +52,8 @@ class SiteController extends Controller
 	public function actionContact()
 	{
 		$model=new ContactForm;
+                $model->email = Yii::app()->user->email;
+                $model->name = Yii::app()->user->name;
 		if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];
