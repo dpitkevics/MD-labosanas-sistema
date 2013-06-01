@@ -128,11 +128,6 @@ class HometaskController extends AuthController
                 $model->term = strtotime($model->term);
                 if($model->save())
                 {
-                    $user_hometask = new UserHometask();
-                    $user_hometask->user_id = Yii::app()->user->id;
-                    $user_hometask->hometask_id = $model->primaryKey;
-                    $user_hometask->timestamp = time();
-                    $user_hometask->save(false);
                     Yii::app()->user->setFlash('success', "Hometask updated!");
                     $this->refresh();
                 }
