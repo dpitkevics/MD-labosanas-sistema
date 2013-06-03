@@ -45,7 +45,8 @@ class CriteriaController extends AuthController
         public function actionEdit($id)
         {
             $model = Criteria::model()->findByPk($id);
-
+            if (!$model)
+                throw new CHttpException(404, "No Criteria found");
             // uncomment the following code to enable ajax-based validation
             
             if(isset($_POST['ajax']) && $_POST['ajax']==='criteria-new-form')

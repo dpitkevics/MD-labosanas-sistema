@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 	'Run',
 );
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<h1>Hometask run</h1>
 <?php $url = Yii::app()->request->baseUrl . DIRECTORY_SEPARATOR."protected".DIRECTORY_SEPARATOR."archive".DIRECTORY_SEPARATOR."archive-" . $this->getDirAppendix() . DIRECTORY_SEPARATOR . $hw->hometask->zipID . DIRECTORY_SEPARATOR . $hw->studentIDNumber . DIRECTORY_SEPARATOR; ?>
 <div class="box">
     <div class="row">

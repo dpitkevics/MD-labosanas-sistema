@@ -2,17 +2,28 @@
 
 class HometaskController extends AuthController
 {
+        /**
+         * Mājas darbu ievadlapa
+         */
 	public function actionIndex()
 	{
             $this->render('index');
 	}
-
+        
+        /**
+         * Lapa iesūtīto darbu saraksta izveidošanai un faila atrādīšanai
+         * @param int $category Mājas darba ID
+         * @param int $hid Saņemtā mājas darba ID
+         * @param string $file Aizkodēta faila atrašanās vieta
+         * @throws CHttpException Ja nav atrasts mājas darbs
+         */
 	public function actionList($category = null, $hid = null, $file = null)
 	{
             $files = null;
             $source = null;
             $extension = null;
             $hometask = Hometask::model()->findByPk($category);
+            // pārbaudam vai mājas darbs ir atrasts
             if (!$hometask)
                 throw new CHttpException(404, "No hometask found");
             if (isset($hid) && $hid !== null) {
@@ -20,16 +31,19 @@ class HometaskController extends AuthController
                 if (!$homework)
                     throw new CHttpException(404, "No homework found");
 
-                $files = glob($homework->sourcePath."*");
+                $files = glob($homework->sourcePath."*"); // iegūstam failu sarakstu mājas darba atrašanās vietā
             }
+            // pārbuadam vai fails ir norādīts
             if (isset($file) && $file !== null) {
                 $file = base64_decode($file);
-                $source = file_get_contents($file);
+                // pārbuadam vai fails eksistē un iegūstam saturu un paplašinājumu
+                if (file_exists($file))
+                    $source = file_get_contents($file);
                 $extension = explode(DIRECTORY_SEPARATOR, $file);
                 $extension = explode('.', end($extension));
                 $extension = end($extension);
             }
-
+            // padodam mainīgos un izdrukājam lapu
             $this->render('list', array(
                 'hometasks'=>$hometask->receivedHomeworks, 
                 'files'=>$files, 
@@ -37,7 +51,7 @@ class HometaskController extends AuthController
                 'extension'=>$extension,
             ));
 	}
-
+        
 	public function actionRun($hid = null)
 	{
             $homework = ReceivedHomework::model()->findByPk($hid);
@@ -109,6 +123,8 @@ class HometaskController extends AuthController
         public function actionUpdate($id)
         {
             $model=Hometask::model()->findByPk($id);
+            if (!$model)
+                throw new CHttpException(404, "No hometask found");
             $model->term = date('Y-m-d', $model->term);
 
             // uncomment the following code to enable ajax-based validation

@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 	'Show',
 );
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<h1>Hometask show</h1>
 <?php $c = 0; ?>
 <div class="box">
     <?php foreach ($files as $file): ?>

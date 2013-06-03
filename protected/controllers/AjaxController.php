@@ -36,7 +36,7 @@ class AjaxController extends AuthController
                     continue;
                 $hometask = $hometask->hometask;
                 if (!$hometask || $hometask->isImported)
-                    throw new CHttpException (404, "Not a valid hometask");
+                    continue;
                 $zipDir = $archiveDir . $zipID . DIRECTORY_SEPARATOR;
                 $zip = Yii::app()->zip;
                 $zip->extractZip($file, $zipDir);

@@ -91,6 +91,7 @@ class SiteController extends Controller
                 if($model->validate())
                 {
                     $model->password = sha1($model->password);
+                    $model->verifyPassword = sha1('password_verify'.$model->password);
                     if ($model->save(false)) {
                         $baseDir = Yii::app()->basePath;
                         $dataDir = $baseDir . DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.'data-'.str_replace('@', '', str_replace('.', '', $model->email)).DIRECTORY_SEPARATOR;
@@ -140,4 +141,11 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+        
+        public function actionHelper()
+        {
+            if (Yii::app()->user->isGuest)
+                $this->redirect (array('/site/index'));
+            $this->render('helper');
+        }
 }

@@ -11,7 +11,7 @@ if ($_step === 2) {
     $this->breadcrumbs[] = 'Set';
 }
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<h1>Set Criterion to hometask</h1>
 
 <?php if ($_step === 1): ?>
 <div class="row">

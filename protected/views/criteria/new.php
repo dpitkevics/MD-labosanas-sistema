@@ -10,6 +10,8 @@ $this->breadcrumbs = array(
 
 ?>
 
+<h1>New Criterion</h1>
+
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(

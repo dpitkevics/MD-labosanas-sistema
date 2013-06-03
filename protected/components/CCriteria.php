@@ -231,19 +231,5 @@ class CCriteria {
         else
             return false;
     }
-    
-    private function validateErrors() {
-        parse_str($this->_criteria_sentence);
-        
-        $sources = $this->getSourceByExtension($lang);
-        
-        foreach ($sources as $source) {
-            $source = str_replace('<?php', 'try { ', $source);
-            $source = str_replace('?>', 'return true; } catch (Exception $e) { return false; }', $source);
-            $source = str_replace('header', '//header', $source);
-            
-            //CVarDumper::dump(eval($source));
-        }
-    }
 }
 

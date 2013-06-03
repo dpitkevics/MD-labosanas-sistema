@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 	'Criteria',
 );
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<h1>Criteria</h1>
 
 <?php if(Yii::app()->user->hasFlash('success')):?>
     <div class="info">
