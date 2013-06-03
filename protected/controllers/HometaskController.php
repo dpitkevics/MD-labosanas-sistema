@@ -57,7 +57,8 @@ class HometaskController extends AuthController
             $homework = ReceivedHomework::model()->findByPk($hid);
             if (!$homework)
                 throw new CHttpException(404, "No homework found");
-
+            if (Yii::app()->user->id != $homework->hometask->userHometasks->user_id)
+                throw new CHttpException(404, "You are not allowed here");
             $criterias = $homework->hometask->hometaskCriterias;
 
             $sums = array(
@@ -139,7 +140,6 @@ class HometaskController extends AuthController
             if(isset($_POST['Hometask']))
             {
                 $model->attributes=$_POST['Hometask'];
-                $model->isImported = 0;
                 $model->timestamp = time();
                 $model->term = strtotime($model->term);
                 if($model->save())

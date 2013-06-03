@@ -21,7 +21,7 @@ $this->breadcrumbs=array(
             Type: <?php echo $criterion->type0->type_name; ?>
         </div>
         <div class="row">
-            Criteria sentence: <?php echo $criterion->criteria_sentence; ?>
+            Criteria sentence: <?php echo htmlentities($criterion->criteria_sentence); ?>
         </div>
         <div class="row">
             <?php echo CHtml::link('Edit', array('/criteria/edit', 'id' => $criterion->id)); ?>

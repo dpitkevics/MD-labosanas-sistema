@@ -13,7 +13,7 @@ $this->breadcrumbs = array(
         This is step by step guide on how to use AHCS system.
     </p>
     <p>
-        After successful authorization, You should create a new hometask. You can do it by <?php echo CHtml::link('clicking here', array('/hometask/new')); ?>.
+        After successful authorization, You should create a new hometask. You can do it by <?php echo CHtml::link('clicking here', array('/hometask/create')); ?>.
     </p>
     <p>
         Form requires zip ID which is received from the name of zip archive downloaded from Moodle system. These are last few digits in the zip archive name.

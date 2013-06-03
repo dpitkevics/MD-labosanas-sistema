@@ -45,13 +45,14 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, password, verifyPassword, name, lastname, email, timestamp', 'required'),
-                        array('password', 'length', 'min' => 6),
+                        array('username, password', 'length', 'min' => 6),
+                        array('username', 'match', 'pattern'=>'/^[a-zA-Z]/', 'message'=>'Username cannot start with digit.'),
                         array('verifyPassword', 'compare', 'compareAttribute'=>'password', 'on'=>'register'),
 			array('timestamp', 'numerical', 'integerOnly'=>true),
 			array('username, password, email', 'length', 'max'=>128),
 			array('name', 'length', 'max'=>32),
 			array('lastname', 'length', 'max'=>64),
-                        array('username, name, lastname', 'length', 'min'=>3),
+                        array('name, lastname', 'length', 'min'=>3),
                         array('email', 'email'),
                         array('username, email', 'unique'),
 			// The following rule is used by search().
